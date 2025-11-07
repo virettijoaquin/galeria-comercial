@@ -1,2 +1,2 @@
 # galeria-comercial
-Trabajo pŕactico grupal de Desarrollo Web
+Trabajo práctico grupal de Desarrollo Web
