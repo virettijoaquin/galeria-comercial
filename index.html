@@ -1,11 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Centro Comercial Plaza Mayor - Tu destino de compras y entretenimiento">
+    <title>Centro Comercial Plaza Mayor | Home</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="navbar-brand">Plaza Mayor</a>
+                
+                <div class="navbar-toggle" id="navbarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="index.html" class="navbar-link active">Home</a></li>
+                    
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Tiendas <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/locales-comerciales.html">Locales Comerciales</a></li>
+                            <li><a href="pages/gastronomia.html">Gastronomía</a></li>
+                            <li><a href="pages/entretenimiento.html">Entretenimiento</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Experiencias <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/promociones.html">Promociones</a></li>
+                            <li><a href="pages/ofertas.html">Ofertas</a></li>
+                            <li><a href="pages/servicios.html">Servicios</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Ayuda <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/contacto.html">Contacto</a></li>
+                            <li><a href="pages/chatbot.html">Chatbot</a></li>
+                            <li><a href="pages/preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                            <li><a href="pages/mapa-del-sitio.html">Mapa del Sitio</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="pages/trabaja-con-nosotros.html" class="btn btn-primary btn-sm">Trabajá con Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">Bienvenido a Plaza Mayor</h1>
+            <p class="hero-subtitle">El centro comercial más completo de la ciudad. Moda, tecnología, entretenimiento y gastronomía en un solo lugar.</p>
+            <div class="hero-buttons">
+                <a href="#tiendas" class="btn btn-primary btn-lg">Ver Tiendas</a>
+                <a href="pages/promociones.html" class="btn btn-outline btn-lg">Promociones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTACADOS -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <p class="section-subtitle">Descubre todo lo que tenemos para ofrecerte</p>
+            
+            <div class="grid grid-3">
+                <div class="card feature-box">
+                    <div class="card-body">
+                        <div class="feature-icon">🛍️</div>
+                        <h3 class="card-title">+150 Tiendas</h3>
+                        <p class="card-text">Las mejores marcas nacionales e internacionales en moda, tecnología, deportes y más.</p>
+                    </div>
+                </div>
+                
+                <div class="card feature-box">
+                    <div class="card-body">
+                        <div class="feature-icon">🍽️</div>
+                        <h3 class="card-title">Zona Gastronómica</h3>
+                        <p class="card-text">Más de 30 restaurantes con cocina internacional, comida rápida y cafeterías premium.</p>
+                    </div>
+                </div>
+                
+                <div class="card feature-box">
+                    <div class="card-body">
+                        <div class="feature-icon">🎬</div>
+                        <h3 class="card-title">Entretenimiento</h3>
+                        <p class="card-text">Cine multiplex, zona de juegos, eventos en vivo y actividades para toda la familia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIENDAS DESTACADAS -->
+    <section class="section" id="tiendas">
+        <div class="container">
+            <h2 class="section-title">Nuestras Marcas</h2>
+            <p class="section-subtitle">Más de 150 tiendas de las mejores marcas internacionales</p>
+            
+            <div class="grid grid-4">
+                <div class="card brand-logo-card brand-zara">
+                    <h3>ZARA</h3>
+                </div>
+                
+                <div class="card brand-logo-card brand-apple">
+                    <h3>APPLE</h3>
+                </div>
+                
+                <div class="card brand-logo-card brand-nike">
+                    <h3>NIKE</h3>
+                </div>
+                
+                <div class="card brand-logo-card brand-starbucks">
+                    <h3>STARBUCKS</h3>
+                </div>
+            </div>
+            
+            <div class="text-center mt-xl">
+                <a href="pages/locales-comerciales.html" class="btn btn-secondary btn-lg">Ver Todos los Locales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOCIONES DESTACADAS -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Promociones Destacadas</h2>
+            <p class="section-subtitle">Aprovechá nuestras ofertas exclusivas</p>
+            
+            <div class="grid grid-3">
+                <div class="promo-highlight">
+                    <div class="promo-icon">🏷️</div>
+                    <h3 class="promo-title">Hasta 50% OFF</h3>
+                    <p class="promo-subtitle">En moda de temporada</p>
+                </div>
+                
+                <div class="promo-highlight">
+                    <div class="promo-icon">🎬</div>
+                    <h3 class="promo-title">2x1 en Cines</h3>
+                    <p class="promo-subtitle">Todos los martes</p>
+                </div>
+                
+                <div class="promo-highlight">
+                    <div class="promo-icon">🍽️</div>
+                    <h3 class="promo-title">15% Cashback</h3>
+                    <p class="promo-subtitle">En gastronomía</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-xl">
+                <a href="pages/promociones.html" class="btn btn-primary btn-lg">Ver Todas las Promociones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS DESTACADOS -->
+    <section class="section" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Servicios Principales</h2>
+            <p class="section-subtitle">Todo lo que necesitás para una experiencia completa</p>
+            
+            <div class="grid grid-4">
+                <div class="service-item">
+                    <div class="service-icon">🅿️</div>
+                    <h3 class="service-title">Estacionamiento</h3>
+                    <p class="service-description">3000 plazas - 1ra hora gratis</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">📶</div>
+                    <h3 class="service-title">WiFi Gratis</h3>
+                    <p class="service-description">Alta velocidad en todo el mall</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">♿</div>
+                    <h3 class="service-title">Accesibilidad</h3>
+                    <p class="service-description">100% accesible</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">💳</div>
+                    <h3 class="service-title">Cajeros</h3>
+                    <p class="service-description">Todos los bancos</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-xl">
+                <a href="pages/servicios.html" class="btn btn-secondary btn-lg">Ver Todos los Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="section section-light" id="horarios">
+        <div class="container">
+            <h2 class="section-title">Horarios de Atención</h2>
+            
+            <div class="grid grid-2 schedule-grid">
+                <div class="card schedule-card">
+                    <div class="card-body">
+                        <h3 class="schedule-title">Centro Comercial</h3>
+                        <div class="schedule-content">
+                            <p class="schedule-day"><strong>Lunes a Domingo</strong></p>
+                            <p class="schedule-hours">10:00 - 22:00</p>
+                        </div>
+                        <p class="schedule-note">Horario general de tiendas y servicios</p>
+                    </div>
+                </div>
+                
+                <div class="card schedule-card">
+                    <div class="card-body">
+                        <h3 class="schedule-title">Zona Gastronómica</h3>
+                        <div class="schedule-content">
+                            <p class="schedule-day"><strong>Lunes a Domingo</strong></p>
+                            <p class="schedule-hours">10:00 - 24:00</p>
+                        </div>
+                        <p class="schedule-note">Restaurantes y cafeterías</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO RÁPIDO -->
+    <section class="section section-dark" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contactános</h2>
+            <p class="section-subtitle">Estamos para ayudarte</p>
+            
+            <div class="contact-cta-container">
+                <a href="pages/contacto.html" class="btn btn-primary btn-lg">Formulario de Contacto</a>
+                <a href="pages/chatbot.html" class="btn btn-outline btn-lg btn-chat">💬 Chat en Vivo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Plaza Mayor</h3>
+                    <p>El centro comercial más completo de la ciudad, con las mejores marcas y experiencias para toda la familia.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <p><a href="#tiendas">Directorio de Tiendas</a></p>
+                    <p><a href="pages/promociones.html">Promociones</a></p>
+                    <p><a href="#servicios">Servicios</a></p>
+                    <p><a href="#horarios">Horarios</a></p>
+                    <p><a href="#contacto">Contacto</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Información</h3>
+                    <p><a href="#">Política de Privacidad</a></p>
+                    <p><a href="#">Términos y Condiciones</a></p>
+                    <p><a href="#">Preguntas Frecuentes</a></p>
+                    <p><a href="#">Trabaja con Nosotros</a></p>
+                    <p><a href="#">Eventos</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir ofertas exclusivas y novedades.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Tu email" class="newsletter-input">
+                        <button class="btn btn-primary newsletter-button">Suscribirse</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Plaza Mayor Centro Comercial. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
