@@ -3,108 +3,108 @@
    ========================================== */
 :root {
   /* Colores principales */
-  --primary-color: #2C3E50;        /* Azul oscuro elegante */
-  --primary-dark: #1A252F;         /* Azul más oscuro */
-  --primary-light: #34495E;        /* Azul claro */
-  
-  --secondary-color: #E74C3C;      /* Rojo vibrante para CTAs */
-  --secondary-dark: #C0392B;       /* Rojo oscuro */
-  --secondary-light: #EC7063;      /* Rojo claro */
-  
-  --accent-color: #F39C12;         /* Naranja/Dorado para destacados */
-  --accent-dark: #D68910;          /* Naranja oscuro */
-  --accent-light: #F5B041;         /* Naranja claro */
-  
+  --primary-color: #2c3e50; /* Azul oscuro elegante */
+  --primary-dark: #1a252f; /* Azul más oscuro */
+  --primary-light: #34495e; /* Azul claro */
+
+  --secondary-color: #e74c3c; /* Rojo vibrante para CTAs */
+  --secondary-dark: #c0392b; /* Rojo oscuro */
+  --secondary-light: #ec7063; /* Rojo claro */
+
+  --accent-color: #f39c12; /* Naranja/Dorado para destacados */
+  --accent-dark: #d68910; /* Naranja oscuro */
+  --accent-light: #f5b041; /* Naranja claro */
+
   /* Colores neutros */
-  --white: #FFFFFF;
-  --light-gray: #F8F9FA;
-  --medium-gray: #E9ECEF;
-  --gray: #ADB5BD;
-  --dark-gray: #6C757D;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --gray: #adb5bd;
+  --dark-gray: #6c757d;
   --black: #212529;
-  
+
   /* Colores de fondo */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F8F9FA;
-  --bg-dark: #2C3E50;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-dark: #2c3e50;
   --bg-overlay: rgba(0, 0, 0, 0.5);
-  
+
   /* Colores de texto */
   --text-primary: #212529;
-  --text-secondary: #6C757D;
-  --text-light: #FFFFFF;
-  --text-muted: #ADB5BD;
-  
+  --text-secondary: #6c757d;
+  --text-light: #ffffff;
+  --text-muted: #adb5bd;
+
   /* Colores de bordes */
-  --border-color: #E9ECEF;
-  --border-dark: #DEE2E6;
-  --border-light: #F8F9FA;
-  
+  --border-color: #e9ecef;
+  --border-dark: #dee2e6;
+  --border-light: #f8f9fa;
+
   /* Estados */
-  --success-color: #27AE60;
-  --warning-color: #F39C12;
-  --error-color: #E74C3C;
-  --info-color: #3498DB;
-  
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --error-color: #e74c3c;
+  --info-color: #3498db;
+
   /* Sombras */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
   --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
-  
+
   /* Tipografía */
-  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-secondary: 'Georgia', serif;
-  
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.5rem;    /* 24px */
-  --font-size-3xl: 1.875rem;  /* 30px */
-  --font-size-4xl: 2.25rem;   /* 36px */
-  --font-size-5xl: 3rem;      /* 48px */
-  
+  --font-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-secondary: "Georgia", serif;
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  
+
   --line-height-tight: 1.25;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.75;
-  
+
   /* Espaciado */
-  --spacing-xs: 0.25rem;   /* 4px */
-  --spacing-sm: 0.5rem;    /* 8px */
-  --spacing-md: 1rem;      /* 16px */
-  --spacing-lg: 1.5rem;    /* 24px */
-  --spacing-xl: 2rem;      /* 32px */
-  --spacing-2xl: 3rem;     /* 48px */
-  --spacing-3xl: 4rem;     /* 64px */
-  --spacing-4xl: 6rem;     /* 96px */
-  
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-3xl: 4rem; /* 64px */
+  --spacing-4xl: 6rem; /* 96px */
+
   /* Border radius */
-  --radius-sm: 0.25rem;    /* 4px */
-  --radius-md: 0.5rem;     /* 8px */
-  --radius-lg: 0.75rem;    /* 12px */
-  --radius-xl: 1rem;       /* 16px */
-  --radius-full: 9999px;   /* Círculo completo */
-  
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-full: 9999px; /* Círculo completo */
+
   /* Transiciones */
   --transition-fast: 0.15s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Tamaños de contenedor */
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
   --container-xl: 1280px;
   --container-2xl: 1536px;
-  
+
   /* Z-index */
   --z-dropdown: 1000;
   --z-sticky: 1020;
@@ -149,7 +149,8 @@ a {
   transition: var(--transition-base);
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -398,15 +399,31 @@ button {
   background-color: var(--bg-dark);
 }
 
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mt-xl { margin-top: var(--spacing-xl); }
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+.mt-xl {
+  margin-top: var(--spacing-xl);
+}
 
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mb-xl { margin-bottom: var(--spacing-xl); }
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+.mb-xl {
+  margin-bottom: var(--spacing-xl);
+}
 
 /* ==========================================
    HEADER Y NAVEGACIÓN
@@ -446,7 +463,7 @@ button {
 }
 
 .navbar-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -543,12 +560,16 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
   overflow: hidden;
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -658,7 +679,11 @@ button {
 
 /* BRAND LOGO CARDS */
 .brand-logo-card {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
   height: 200px;
   display: flex;
   align-items: center;
@@ -939,3 +964,279 @@ button {
     font-size: var(--font-size-base);
   }
 }
+
+/* ==========================================
+   ESTILOS MAPA INTERACTIVO
+   ========================================== */
+
+/* BARRA DE BUSQUEDA */
+
+.d-flex {
+  display: flex !important;
+}
+
+.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--bg-primary);
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.me-2 {
+  margin-right: 0.5rem !important;
+}
+
+/* FILTRO PISOS */
+.nav {
+  --nav-link-padding-x: 1rem;
+  --nav-link-padding-y: 0.5rem;
+  --nav-link-font-weight: ;
+  --nav-link-color: var(--text-muted);
+  --nav-link-hover-color: var(--text-light);
+  --nav-link-disabled-color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-pills {
+  --nav-pills-border-radius: var(--border-radius);
+  --nav-pills-link-active-color: var(--text-light);
+  --nav-pills-link-active-bg: var(--secondary-color);
+}
+
+.nav-link {
+  display: block;
+  padding: var(--nav-link-padding-y) var(--nav-link-padding-x);
+  font-size: var(--nav-link-font-size);
+  font-weight: var(--nav-link-font-weight);
+  color: var(--nav-link-color);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+}
+
+.nav-link.active {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  border-radius: var(--radius-md);
+  transition: var(--transition-slow);
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+/* TIENDAS */
+.card-container {
+  --gutter-x: 1rem;
+  --gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: calc(0.8 * var(--gutter-x));
+  margin-left: calc(0.8 * var(--gutter-x));
+}
+
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.my-3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.card-tienda {
+  cursor: pointer;
+  transition: var(--transition-base);
+  --card-spacer-y: 0.8rem;
+  --card-spacer-x: 0.8rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  max-width: 15rem;
+  height: var(--card-height);
+  color: var(--text-primary);
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: var(--border-width) solid var(--border-color);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.card-tienda:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-tienda-body {
+  flex: 1 1 auto;
+  padding: var(--card-spacer-y) var(--card-spacer-x);
+  color: var(--card-color);
+}
+
+/* CONTENEDOR MAPA */
+.map-container {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.mapa-logo {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+/* PANEL INFO */
+.panel {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  width: 60%;
+}
+
+.panel-img-container {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+.panel-img {
+  padding: 0.25rem;
+  background-color: var(--body-bg);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  max-width: 100%;
+  height: auto;
+}
+
+.panel-content {
+  flex: 1 0 0;
+  padding-left: 1rem;
+}
+
+/* ==========================================
+   MAPA & TIENDA - RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1200px) {
+  .card-container {
+    margin-right: calc(0.6 * var(--gutter-x));
+    margin-left: calc(0.6 * var(--gutter-x));
+    gap: 0.75rem;
+  }
+
+  .card-tienda {
+    max-width: 13rem;
+  }
+
+  .map-container {
+    height: 420px;
+  }
+
+  .panel {
+    width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .card-container {
+    justify-content: center;
+    margin-right: calc(0.4 * var(--gutter-x));
+    margin-left: calc(0.4 * var(--gutter-x));
+    gap: 0.75rem;
+  }
+
+  .card-tienda {
+    max-width: 40%;
+    min-width: auto;
+    height: auto;
+    align-items: center;
+  }
+
+  .card-tienda-body {
+    padding: 0.6rem;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .map-container {
+    height: 360px;
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 720px;
+    display: none;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .panel-img-container {
+    width: 25%;
+  }
+
+  .panel-content {
+    padding-left: 0.75rem;
+  }
+
+  .mapa-logo {
+    display: block;
+    right: 10px;
+    top: 10px;
+  }
+
+  .nav-link {
+    padding: 0.35rem 0.6rem;
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* ==========================================
+   TERMINA ESTILOS MAPA INTERACTIVO
+   ========================================== */

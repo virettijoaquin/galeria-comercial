@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería Comercial</title>
+
+    <link rel="stylesheet" href="../style/style.css" />
+  </head>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Plaza Mayor</a>
+
+        <div class="navbar-toggle" id="navbarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html" class="navbar-link active">Home</a></li>
+
+          <li class="navbar-dropdown">
+            <a href="#" class="navbar-link"
+              >Tiendas <span class="dropdown-icon">▼</span></a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a href="pages/locales-comerciales.html">Locales Comerciales</a>
+              </li>
+              <li><a href="pages/gastronomia.html">Gastronomía</a></li>
+              <li><a href="pages/entretenimiento.html">Entretenimiento</a></li>
+            </ul>
+          </li>
+
+          <li class="navbar-dropdown">
+            <a href="#" class="navbar-link"
+              >Experiencias <span class="dropdown-icon">▼</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="pages/promociones.html">Promociones</a></li>
+              <li><a href="pages/ofertas.html">Ofertas</a></li>
+              <li><a href="pages/servicios.html">Servicios</a></li>
+            </ul>
+          </li>
+
+          <li class="navbar-dropdown">
+            <a href="#" class="navbar-link"
+              >Ayuda <span class="dropdown-icon">▼</span></a
+            >
+            <ul class="dropdown-menu">
+              <li><a href="pages/contacto.html">Contacto</a></li>
+              <li><a href="pages/chatbot.html">Chatbot</a></li>
+              <li>
+                <a href="pages/preguntas-frecuentes.html"
+                  >Preguntas Frecuentes</a
+                >
+              </li>
+              <li><a href="pages/mapa-del-sitio.html">Mapa del Sitio</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="pages/trabaja-con-nosotros.html"
+              class="btn btn-primary btn-sm"
+              >Trabajá con Nosotros</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <body>
+    <div class="container py-5">
+      <h1 class="mb-4 text-center">Nuestras Tiendas</h1>
+
+      <!-- Barra de búsqueda -->
+      <form class="d-flex mb-4" role="search">
+        <input
+          class="form-control me-2"
+          id="busqueda"
+          type="search"
+          placeholder="Busca por nombre o tipo de tienda..."
+        />
+      </form>
+
+      <!-- Filtro por piso -->
+      <ul class="nav nav-pills mb-4 justify-content-center" id="filtroPiso">
+        <li class="nav-item">
+          <button class="nav-link active" data-piso="Planta Baja">
+            Planta Baja
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-piso="1">Piso 1</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-piso="2">Piso 2</button>
+        </li>
+      </ul>
+
+      <!-- TIENDAS Y MAPA -->
+      <div class="card-container">
+        <!-- TIENDAS -->
+        <div class="col-md-6">
+          <div class="card-container">
+            <!-- PLANTA BAJA -->
+
+            <!-- Zara -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Zara"
+              data-tipo="Indumentaria"
+              data-piso="Planta Baja"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.zara.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Zara</h5>
+                  <p class="card-text">Indumentaria</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Zara -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Zara"
+              data-tipo="Indumentaria"
+              data-piso="Planta Baja"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.zara.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Zara</h5>
+                  <p class="card-text">Indumentaria</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Zara -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Zara"
+              data-tipo="Indumentaria"
+              data-piso="Planta Baja"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.zara.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Zara</h5>
+                  <p class="card-text">Indumentaria</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Zara -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Zara"
+              data-tipo="Indumentaria"
+              data-piso="Planta Baja"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.zara.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Zara</h5>
+                  <p class="card-text">Indumentaria</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Zara -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Zara"
+              data-tipo="Indumentaria"
+              data-piso="Planta Baja"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.zara.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Zara</h5>
+                  <p class="card-text">Indumentaria</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Zara -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Zara"
+              data-tipo="Indumentaria"
+              data-piso="Planta Baja"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.zara.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Zara</h5>
+                  <p class="card-text">Indumentaria</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRIMER PISO -->
+            <!-- Starbucks -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Starbucks"
+              data-tipo="Gastronomía"
+              data-piso="1"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Starbucks</h5>
+                  <p class="card-text">Gastronomía</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Starbucks -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Starbucks"
+              data-tipo="Gastronomía"
+              data-piso="1"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Starbucks</h5>
+                  <p class="card-text">Gastronomía</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Starbucks -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Starbucks"
+              data-tipo="Gastronomía"
+              data-piso="1"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Starbucks</h5>
+                  <p class="card-text">Gastronomía</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Starbucks -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Starbucks"
+              data-tipo="Gastronomía"
+              data-piso="1"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Starbucks</h5>
+                  <p class="card-text">Gastronomía</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Starbucks -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Starbucks"
+              data-tipo="Gastronomía"
+              data-piso="1"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Starbucks</h5>
+                  <p class="card-text">Gastronomía</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Starbucks -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Starbucks"
+              data-tipo="Gastronomía"
+              data-piso="1"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Starbucks</h5>
+                  <p class="card-text">Gastronomía</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SEGUNDO PISO -->
+            <!-- Samsung -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Samsung"
+              data-tipo="Tecnología"
+              data-piso="2"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Samsung</h5>
+                  <p class="card-text">Tecnología</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Samsung -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Samsung"
+              data-tipo="Tecnología"
+              data-piso="2"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Samsung</h5>
+                  <p class="card-text">Tecnología</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Samsung -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Samsung"
+              data-tipo="Tecnología"
+              data-piso="2"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Samsung</h5>
+                  <p class="card-text">Tecnología</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Samsung -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Samsung"
+              data-tipo="Tecnología"
+              data-piso="2"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Samsung</h5>
+                  <p class="card-text">Tecnología</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Samsung -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Samsung"
+              data-tipo="Tecnología"
+              data-piso="2"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Samsung</h5>
+                  <p class="card-text">Tecnología</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Samsung -->
+            <div
+              class="col-md-6 my-3 tienda"
+              data-nombre="Samsung"
+              data-tipo="Tecnología"
+              data-piso="2"
+              data-desc="Esta es la descripcion de la tienda seleccionada."
+              data-logo="../assets/img/logo.png"
+              data-map-x="40"
+              data-map-y="60"
+              data-url="https://www.starbucks.com.ar"
+            >
+              <div class="card-tienda">
+                <div class="card-tienda-body text-center">
+                  <h5 class="card-title">Samsung</h5>
+                  <p class="card-text">Tecnología</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAPA -->
+        <div class="col-md-6">
+          <div class="map-container">
+            <!-- Mapa Planta Baja -->
+            <img
+              src="../assets/img/plano.png"
+              class="img-fluid mall-map"
+              data-piso="Planta Baja"
+            />
+
+            <!-- Mapa Piso 1 -->
+            <img
+              src="../assets/img/plano.png"
+              class="img-fluid mall-map d-none"
+              data-piso="1"
+            />
+
+            <!-- Mapa Piso 2 -->
+            <img
+              src="../assets/img/plano.png"
+              class="img-fluid mall-map d-none"
+              data-piso="2"
+            />
+
+            <!-- Logo Tienda en Mapa -->
+            <img id="mapaLogo" class="mapa-logo" src="" />
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- STORE INFO PANEL -->
+        <div class="panel my-3">
+          <div class="card-container justify-content-center">
+            <div class="panel-img-container">
+              <img id="panel-logo" class="panel-img" src="" alt="" />
+            </div>
+            <div class="panel-content">
+              <h4 class="card-title" id="panel-nombre"></h4>
+              <p class="text-secondary" id="panel-info"></p>
+              <p class="card-text" id="panel-desc"></p>
+              <a
+                id="infoLink"
+                href="#"
+                target="_blank"
+                class="col btn btn-primary mt-2"
+                >Visitar Sitio</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
