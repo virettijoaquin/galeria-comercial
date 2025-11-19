@@ -847,6 +847,28 @@ button {
 }
 
 /* ==========================================
+   PROMOCIONES PERSONALIZADAS
+   ========================================== */
+
+.promo-card .badge {
+  margin-bottom: var(--spacing-sm);
+}
+
+.promo-card .card-title {
+  margin-top: var(--spacing-sm);
+}
+
+.promo-card .card-text {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Imagen de promo más estilizada */
+.promo-card .card-img {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ==========================================
    RESPONSIVE
    ========================================== */
 @media (max-width: 768px) {
