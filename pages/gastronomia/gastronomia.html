@@ -7,9 +7,10 @@
     <title>Gastronomía | Centro Comercial Plaza Mayor</title>
     <link rel="stylesheet" href="../../style/style.css">
     <link rel="stylesheet" href="gastronomia.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="gastronomia.js"></script>
 </head>
 <body>
-    <!-- HEADER -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -52,13 +53,12 @@
                         </ul>
                     </li>
 
-                    <li><a href="../trabaja-con-nosotros.html" class="btn btn-primary btn-sm">Trabajá con Nosotros</a></li>
+                    <li><a href="../trabaja-con-nosotros/trabaja-con-nosotros.html" class="btn btn-primary btn-sm">Trabajá con Nosotros</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero hero-gastro">
         <div class="hero-content">
             <h1 class="hero-title">Gastronomía</h1>
@@ -66,7 +66,6 @@
         </div>
     </section>
 
-    <!-- INTRODUCCIÓN -->
     <section class="section section-light">
         <div class="container">
             <div class="gastro-intro-container">
@@ -87,13 +86,11 @@
         </div>
     </section>
 
-    <!-- RESTAURANTES DESTACADOS -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Nuestros Restaurantes</h2>
             <p class="section-subtitle">Variedad y calidad en cada bocado</p>
 
-            <!-- BUSCADOR POR CATEGORÍA -->
             <div class="category-filter">
                 <button class="filter-btn active" data-category="todos">
                     <span class="filter-emoji">🍽️</span>
@@ -126,7 +123,6 @@
             </div>
 
             <div class="grid grid-2" id="gastro-grid">
-                <!-- McDonald's -->
                 <div class="gastro-card" data-category="comida-rapida">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/mcdonalds.png" alt="McDonald's">
@@ -148,7 +144,6 @@
                     </div>
                 </div>
 
-                <!-- Starbucks -->
                 <div class="gastro-card" data-category="cafeteria">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/starbucks.png" alt="Starbucks">
@@ -170,7 +165,6 @@
                     </div>
                 </div>
 
-                <!-- Lucciano's -->
                 <div class="gastro-card" data-category="heladeria">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/luccianos.png" alt="Lucciano's">
@@ -192,7 +186,6 @@
                     </div>
                 </div>
 
-                <!-- Tostado Club -->
                 <div class="gastro-card" data-category="cafeteria">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/tostado_club.png" alt="Tostado Club">
@@ -214,7 +207,6 @@
                     </div>
                 </div>
 
-                <!-- Green Eat -->
                 <div class="gastro-card" data-category="saludable">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/green_eat.png" alt="Green Eat">
@@ -236,7 +228,6 @@
                     </div>
                 </div>
 
-                <!-- El Club de la Milanesa -->
                 <div class="gastro-card" data-category="restaurante">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/club_milanesa.jpeg" alt="El Club de la Milanesa">
@@ -258,7 +249,6 @@
                     </div>
                 </div>
 
-                <!-- Café Martínez -->
                 <div class="gastro-card" data-category="cafeteria">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/cafe_martinez.png" alt="Café Martínez">
@@ -280,7 +270,6 @@
                     </div>
                 </div>
 
-                <!-- Panadería del Centro -->
                 <div class="gastro-card" data-category="panaderia">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/panaderia_del_centro.png" alt="Panadería del Centro">
@@ -302,7 +291,6 @@
                     </div>
                 </div>
 
-                <!-- Freddo -->
                 <div class="gastro-card" data-category="heladeria">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/freddo.png" alt="Freddo">
@@ -324,7 +312,6 @@
                     </div>
                 </div>
 
-                <!-- La Parolaccia -->
                 <div class="gastro-card" data-category="restaurante">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/la_parolaccia.png" alt="La Parolaccia">
@@ -346,7 +333,6 @@
                     </div>
                 </div>
 
-                <!-- Kentucky -->
                 <div class="gastro-card" data-category="restaurante">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/kentucky.png" alt="Kentucky">
@@ -368,7 +354,6 @@
                     </div>
                 </div>
 
-                <!-- Subway -->
                 <div class="gastro-card" data-category="comida-rapida">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/subway.png" alt="Subway">
@@ -390,7 +375,6 @@
                     </div>
                 </div>
 
-                <!-- Fresh Market -->
                 <div class="gastro-card" data-category="saludable">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/fresh_market.png" alt="Fresh Market">
@@ -412,7 +396,6 @@
                     </div>
                 </div>
 
-                <!-- Il Gatto -->
                 <div class="gastro-card" data-category="restaurante">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/il_gatto.png" alt="Il Gatto">
@@ -434,7 +417,6 @@
                     </div>
                 </div>
 
-                <!-- Le Pain Quotidien -->
                 <div class="gastro-card" data-category="panaderia">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/le_pain_quotidien.png" alt="Le Pain Quotidien">
@@ -456,7 +438,6 @@
                     </div>
                 </div>
 
-                <!-- Havanna -->
                 <div class="gastro-card" data-category="cafeteria">
                     <div class="gastro-card-image">
                         <img src="../../assets/img/gastronomia/logos/havanna.png" alt="Havanna">
@@ -481,7 +462,6 @@
         </div>
     </section>
 
-    <!-- HORARIOS -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Horarios de Atención</h2>
@@ -500,7 +480,6 @@
         </div>
     </section>
 
-    <!-- CALL TO ACTION -->
     <section class="section section-dark">
         <div class="container">
             <div class="cta-content">
@@ -514,7 +493,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -564,39 +542,5 @@
     </footer>
 
     <script src="../../js/main.js"></script>
-    <script>
-        // Filtrado por categoría
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const gastroCards = document.querySelectorAll('.gastro-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-
-                    // Actualizar botón activo
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    // Filtrar cards
-                    gastroCards.forEach(card => {
-                        if (category === 'todos' || card.getAttribute('data-category') === category) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'scale(1)';
-                            }, 10);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'scale(0.8)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
