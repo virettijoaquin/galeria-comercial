@@ -1,13 +1,7 @@
-/* ==========================================
-   PÁGINA DE SERVICIOS
-   ========================================== */
-
-/* Hero Servicios */
 .hero-services {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
 
-/* Introducción de Servicios */
 .services-intro-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -43,7 +37,6 @@
   transform: scale(1.05);
 }
 
-/* Service Detail - Alternating Layout */
 .service-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -140,7 +133,6 @@
   font-weight: var(--font-weight-bold);
 }
 
-/* Service Cards */
 .service-card {
   background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
   border: 1px solid rgba(255,255,255,0.2);
@@ -165,7 +157,6 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* Service Item Boxes */
 .service-item-box {
   background-color: var(--white);
   padding: var(--spacing-xl);
@@ -204,7 +195,6 @@
   flex-grow: 1;
 }
 
-/* Services Gallery */
 .services-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -254,7 +244,6 @@
   margin: 0;
 }
 
-/* CTA Section */
 .cta-content {
   text-align: center;
   max-width: 700px;
@@ -281,7 +270,6 @@
   flex-wrap: wrap;
 }
 
-/* Responsive - Servicios */
 @media (max-width: 968px) {
   .services-intro-container {
     grid-template-columns: 1fr;

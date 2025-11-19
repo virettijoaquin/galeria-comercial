@@ -1,13 +1,7 @@
-/* ==========================================
-   PÁGINA DE GASTRONOMÍA
-   ========================================== */
-
-/* Hero Gastronomía */
 .hero-gastro {
   background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
 }
 
-/* Introducción de Gastronomía */
 .gastro-intro-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -43,7 +37,6 @@
   transform: scale(1.05);
 }
 
-/* Category Filter */
 .category-filter {
   display: flex;
   flex-wrap: wrap;
@@ -99,12 +92,10 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Gastro Grid - Forzar 2 columnas */
 #gastro-grid.grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* Gastro Cards */
 .gastro-card {
   background-color: var(--white);
   border-radius: var(--radius-lg);
@@ -226,7 +217,6 @@
   transform: none;
 }
 
-/* Gastro Brands Grid */
 .gastro-brands-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -268,7 +258,6 @@
   margin: 0;
 }
 
-/* Category Boxes */
 .category-box {
   background-color: var(--white);
   padding: var(--spacing-xl);
@@ -314,7 +303,6 @@
   transition: var(--transition-base);
 }
 
-/* Responsive - Gastronomía */
 @media (max-width: 968px) {
   .gastro-intro-container {
     grid-template-columns: 1fr;
