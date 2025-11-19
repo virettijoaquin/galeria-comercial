@@ -2177,6 +2177,33 @@ details p {
   
   .family-card-title {
     font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .family-intro {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .family-info-card {
+    padding: var(--spacing-md);
+  }
+  
+  .family-list li {
+    padding-left: var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  
+  .family-alert {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  
+  .family-cta-message {
+    font-size: var(--font-size-lg);
+  }
+}
+
 /* ========================================
    PÁGINA DE CONTACTO
    ======================================== */
@@ -2530,7 +2557,7 @@ details p {
   .family-cta-message {
     font-size: var(--font-size-lg);
   }
-}
+
   .contact-layout {
     gap: var(--spacing-lg);
   }
