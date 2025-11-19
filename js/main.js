@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicializar todos los componentes
     initNavbar();
     initSmoothScroll();
-    initScrollAnimations();
     initActiveNavLinks();
+    initBrandsCarousel();
 });
 
 // ==========================================
@@ -339,6 +339,170 @@ if (newsletterForm) {
         } else {
             alert('Por favor, ingresa tu email.');
         }
+    });
+}
+
+// ==========================================
+// CARRUSEL DE MARCAS
+// ==========================================
+function initBrandsCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const pagination = document.querySelector('.carousel-pagination');
+    
+    if (!track || !pagination) return;
+    
+    const items = track.querySelectorAll('.brand-logo-card');
+    let currentPage = 0;
+    
+    function getItemsPerView() {
+        if (window.innerWidth <= 480) return 1;
+        if (window.innerWidth <= 768) return 2;
+        return 4;
+    }
+    
+    function getTotalPages() {
+        return Math.ceil(items.length / getItemsPerView());
+    }
+    
+    function generatePagination() {
+        pagination.innerHTML = '';
+        const totalPages = getTotalPages();
+        
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            dot.setAttribute('aria-label', `Ir a página ${i + 1}`);
+            
+            if (i === 0) {
+                dot.classList.add('active');
+            }
+            
+            dot.addEventListener('click', () => goToPage(i));
+            pagination.appendChild(dot);
+        }
+    }
+    
+    function getPageWidth() {
+        // El ancho de la página es el ancho del contenedor menos el padding
+        const container = track.parentElement;
+        const style = window.getComputedStyle(container);
+        const paddingLeft = parseFloat(style.paddingLeft) || 0;
+        const paddingRight = parseFloat(style.paddingRight) || 0;
+        return container.offsetWidth - paddingLeft - paddingRight;
+    }
+    
+    function goToPage(pageIndex) {
+        currentPage = pageIndex;
+        const pageWidth = getPageWidth();
+        const offset = -currentPage * pageWidth;
+        
+        track.style.transform = `translateX(${offset}px)`;
+        
+        // Actualizar dots activos
+        const dots = pagination.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+    }
+    
+    // Inicializar paginación
+    generatePagination();
+    
+    // Drag con mouse - usar el contenedor para capturar todos los eventos
+    const container = track.parentElement;
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let startScrollLeft = 0;
+    
+    container.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', drag);
+    window.addEventListener('mouseup', dragEnd);
+    
+    // Touch para móviles
+    container.addEventListener('touchstart', dragStart);
+    window.addEventListener('touchmove', drag, { passive: false });
+    window.addEventListener('touchend', dragEnd);
+    
+    function dragStart(e) {
+        // Solo iniciar si el click es dentro del contenedor
+        if (!container.contains(e.target)) return;
+        
+        isDragging = true;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        currentX = startX;
+        
+        // Obtener la posición actual
+        const transform = track.style.transform;
+        const match = transform.match(/translateX\((-?\d+\.?\d*)px\)/);
+        startScrollLeft = match ? parseFloat(match[1]) : 0;
+        
+        track.style.cursor = 'grabbing';
+        track.style.transition = 'none';
+        
+        // Prevenir selección de texto
+        e.preventDefault();
+    }
+    
+    function drag(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        
+        currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        const distance = currentX - startX;
+        const newPosition = startScrollLeft + distance;
+        
+        const pageWidth = getPageWidth();
+        const maxScroll = -(getTotalPages() - 1) * pageWidth;
+        
+        // Limitar el scroll
+        const limitedPosition = Math.max(maxScroll, Math.min(0, newPosition));
+        track.style.transform = `translateX(${limitedPosition}px)`;
+    }
+    
+    function dragEnd(e) {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        track.style.cursor = 'grab';
+        track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        const distance = currentX - startX;
+        const pageWidth = getPageWidth();
+        const threshold = pageWidth * 0.2;
+        
+        // Determinar nueva página
+        if (distance < -threshold && currentPage < getTotalPages() - 1) {
+            currentPage++;
+        } else if (distance > threshold && currentPage > 0) {
+            currentPage--;
+        }
+        
+        goToPage(currentPage);
+    }
+    
+    // Recalcular en resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const oldTotalPages = pagination.querySelectorAll('.carousel-dot').length;
+            const newTotalPages = getTotalPages();
+            
+            // Si cambia el número de páginas, regenerar paginación
+            if (newTotalPages !== oldTotalPages) {
+                generatePagination();
+            }
+            
+            // Asegurar que currentPage sea válido
+            if (currentPage >= newTotalPages) {
+                currentPage = 0;
+            }
+            
+            goToPage(currentPage);
+            currentTranslate = 0;
+            prevTranslate = 0;
+        }, 250);
     });
 }
 

@@ -152,18 +152,23 @@
             <h2 class="section-title">Nuestras Marcas</h2>
             <p class="section-subtitle">Más de 150 tiendas de las mejores marcas internacionales</p>
 
-            <div class="grid grid-4">
-                <div class="card brand-logo-card brand-imax">
+            <div class="carousel-container">
+                <div class="carousel-track" id="brandsCarousel">
+                    <div class="card brand-logo-card brand-imax"></div>
+                    <div class="card brand-logo-card brand-levis"></div>
+                    <div class="card brand-logo-card brand-nike"></div>
+                    <div class="card brand-logo-card brand-starbucks"></div>
+                    <div class="card brand-logo-card brand-imax"></div>
+                    <div class="card brand-logo-card brand-levis"></div>
+                    <div class="card brand-logo-card brand-nike"></div>
+                    <div class="card brand-logo-card brand-starbucks"></div>
+                    <div class="card brand-logo-card brand-imax"></div>
+                    <div class="card brand-logo-card brand-levis"></div>
+                    <div class="card brand-logo-card brand-nike"></div>
+                    <div class="card brand-logo-card brand-starbucks"></div>
                 </div>
 
-                <div class="card brand-logo-card brand-levis">
-                </div>
-
-                <div class="card brand-logo-card brand-nike">
-                </div>
-
-                <div class="card brand-logo-card brand-starbucks">  
-                </div>
+                <div class="carousel-pagination" id="carouselPagination"></div>
             </div>
 
             <div class="text-center mt-xl">
@@ -178,23 +183,36 @@
             <h2 class="section-title">Promociones Destacadas</h2>
             <p class="section-subtitle">Aprovechá nuestras ofertas exclusivas</p>
 
-            <div class="grid grid-3">
-                <div class="promo-highlight">
-                    <div class="promo-icon">🏷️</div>
-                    <h3 class="promo-title">Hasta 50% OFF</h3>
-                    <p class="promo-subtitle">En moda de temporada</p>
+            <div class="promo-grid">
+                <div class="promo-card promo-featured">
+                    <div class="promo-badge">HOT</div>
+                    <div class="promo-content">
+                        <span class="promo-category">Moda</span>
+                        <h3 class="promo-heading">Hasta 50% OFF</h3>
+                        <p class="promo-description">En toda la colección de temporada. No te pierdas esta oportunidad
+                            única.</p>
+                        <span class="promo-validity">Válido hasta fin de mes</span>
+                    </div>
                 </div>
 
-                <div class="promo-highlight">
-                    <div class="promo-icon">🎬</div>
-                    <h3 class="promo-title">2x1 en Cines</h3>
-                    <p class="promo-subtitle">Todos los martes</p>
+                <div class="promo-card">
+                    <div class="promo-badge">2x1</div>
+                    <div class="promo-content">
+                        <span class="promo-category">Entertainment</span>
+                        <h3 class="promo-heading">Cines</h3>
+                        <p class="promo-description">Todos los martes, tu entrada te sale la mitad.</p>
+                        <span class="promo-validity">Todos los martes</span>
+                    </div>
                 </div>
 
-                <div class="promo-highlight">
-                    <div class="promo-icon">🍽️</div>
-                    <h3 class="promo-title">15% Cashback</h3>
-                    <p class="promo-subtitle">En gastronomía</p>
+                <div class="promo-card">
+                    <div class="promo-badge">15%</div>
+                    <div class="promo-content">
+                        <span class="promo-category">Gastronomía</span>
+                        <h3 class="promo-heading">Cashback</h3>
+                        <p class="promo-description">Acumulá puntos en todos los restaurantes del centro.</p>
+                        <span class="promo-validity">Válido siempre</span>
+                    </div>
                 </div>
             </div>
 
@@ -210,29 +228,80 @@
             <h2 class="section-title">Servicios Principales</h2>
             <p class="section-subtitle">Todo lo que necesitás para una experiencia completa</p>
 
-            <div class="grid grid-4">
-                <div class="service-item">
-                    <div class="service-icon">🅿️</div>
-                    <h3 class="service-title">Estacionamiento</h3>
-                    <p class="service-description">3000 plazas - 1ra hora gratis</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px"
+                                viewBox="0 0 1024 1024">
+                                <path
+                                    d="M829.44 911.36c45.245 0 81.92-36.675 81.92-81.92V194.56c0-45.245-36.675-81.92-81.92-81.92H194.56c-45.245 0-81.92 36.675-81.92 81.92v634.88c0 45.245 36.675 81.92 81.92 81.92h634.88zm0 40.96H194.56c-67.866 0-122.88-55.014-122.88-122.88V194.56c0-67.866 55.014-122.88 122.88-122.88h634.88c67.866 0 122.88 55.014 122.88 122.88v634.88c0 67.866-55.014 122.88-122.88 122.88z" />
+                                <path
+                                    d="M376.538 230.746v573.44c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48v-573.44c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48z" />
+                                <path
+                                    d="M555.302 503.974c73.517 0 133.12-59.603 133.12-133.12 0-72.104-58.456-130.56-130.56-130.56h-140.36v263.68h137.8zm0 40.96h-158.28c-11.311 0-20.48-9.169-20.48-20.48v-304.64c0-11.311 9.169-20.48 20.48-20.48h160.84c94.726 0 171.52 76.794 171.52 171.52 0 96.139-77.941 174.08-174.08 174.08z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3 class="service-name">Estacionamiento</h3>
+                        <p class="service-detail">3000 plazas disponibles</p>
+                        <span class="service-badge">1ra hora gratis</span>
+                    </div>
                 </div>
 
-                <div class="service-item">
-                    <div class="service-icon">📶</div>
-                    <h3 class="service-title">WiFi Gratis</h3>
-                    <p class="service-description">Alta velocidad en todo el mall</p>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M1.33309 8.07433C0.92156 8.44266 0.886539 9.07485 1.25487 9.48638C1.62319 9.89791 2.25539 9.93293 2.66691 9.5646L1.33309 8.07433ZM21.3331 9.5646C21.7446 9.93293 22.3768 9.89791 22.7451 9.48638C23.1135 9.07485 23.0784 8.44266 22.6669 8.07433L21.3331 9.5646ZM12 19C11.4477 19 11 19.4477 11 20C11 20.5523 11.4477 21 12 21V19ZM12.01 21C12.5623 21 13.01 20.5523 13.01 20C13.01 19.4477 12.5623 19 12.01 19V21ZM14.6905 17.04C15.099 17.4116 15.7315 17.3817 16.1031 16.9732C16.4748 16.5646 16.4448 15.9322 16.0363 15.5605L14.6905 17.04ZM18.0539 13.3403C18.4624 13.7119 19.0949 13.682 19.4665 13.2734C19.8381 12.8649 19.8082 12.2324 19.3997 11.8608L18.0539 13.3403ZM7.96372 15.5605C7.55517 15.9322 7.52524 16.5646 7.89687 16.9732C8.2685 17.3817 8.90095 17.4116 9.3095 17.04L7.96372 15.5605ZM4.60034 11.8608C4.19179 12.2324 4.16185 12.8649 4.53348 13.2734C4.90511 13.682 5.53756 13.7119 5.94611 13.3403L4.60034 11.8608ZM2.66691 9.5646C5.14444 7.34716 8.41371 6 12 6V4C7.90275 4 4.16312 5.54138 1.33309 8.07433L2.66691 9.5646ZM12 6C15.5863 6 18.8556 7.34716 21.3331 9.5646L22.6669 8.07433C19.8369 5.54138 16.0972 4 12 4V6ZM12 21H12.01V19H12V21ZM12 16C13.0367 16 13.9793 16.3931 14.6905 17.04L16.0363 15.5605C14.9713 14.5918 13.5536 14 12 14V16ZM12 11C14.3319 11 16.4546 11.8855 18.0539 13.3403L19.3997 11.8608C17.4466 10.0842 14.8487 9 12 9V11ZM9.3095 17.04C10.0207 16.3931 10.9633 16 12 16V14C10.4464 14 9.02872 14.5918 7.96372 15.5605L9.3095 17.04ZM5.94611 13.3403C7.54544 11.8855 9.66815 11 12 11V9C9.15127 9 6.55344 10.0842 4.60034 11.8608L5.94611 13.3403Z"
+                                    fill="#000000" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3 class="service-name">WiFi Gratis</h3>
+                        <p class="service-detail">Alta velocidad</p>
+                        <span class="service-badge">Todo el mall</span>
+                    </div>
                 </div>
 
-                <div class="service-item">
-                    <div class="service-icon">♿</div>
-                    <h3 class="service-title">Accesibilidad</h3>
-                    <p class="service-description">100% accesible</p>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px"
+                                viewBox="0 0 32 32" version="1.1">
+                                <title>wheelchair</title>
+                                <path
+                                    d="M22.383 24.107c-0.104-0.058-0.228-0.093-0.36-0.093-0.283 0-0.528 0.157-0.654 0.39l-0.002 0.004c-1.598 2.906-4.64 4.843-8.133 4.843-5.109 0-9.251-4.142-9.251-9.251 0-3.016 1.443-5.695 3.677-7.384l0.023-0.017c0.183-0.138 0.3-0.355 0.3-0.6 0-0.414-0.336-0.75-0.75-0.75-0.17 0-0.326 0.056-0.452 0.152l0.002-0.001c-2.623 1.982-4.3 5.095-4.3 8.6 0 5.937 4.813 10.75 10.75 10.75 4.060 0 7.594-2.25 9.423-5.571l0.028-0.056c0.058-0.104 0.092-0.227 0.092-0.359 0-0.283-0.157-0.528-0.389-0.655l-0.004-0.002zM30.729 24.818c-0.090-0.329-0.387-0.566-0.739-0.566-0.061 0-0.12 0.007-0.177 0.021l0.005-0.001-3.332 0.834-2.85-8.348c-0.104-0.298-0.382-0.508-0.709-0.508h-9.284l-0.538-3.5h4.895c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0h-5.126l-0.763-4.963c0.906-0.42 1.522-1.321 1.522-2.367 0-1.437-1.165-2.601-2.601-2.601s-2.601 1.165-2.601 2.601c0 1.292 0.943 2.365 2.178 2.567l0.015 0.002 1.634 10.626c0.058 0.362 0.367 0.635 0.741 0.636h9.391l2.9 8.492c0.103 0.298 0.381 0.508 0.708 0.508 0 0 0.001 0 0.001 0h-0c0.065-0 0.127-0.008 0.187-0.023l-0.006 0.001 4-1c0.329-0.085 0.569-0.379 0.569-0.729 0-0.064-0.008-0.127-0.023-0.186l0.001 0.005z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3 class="service-name">Accesibilidad</h3>
+                        <p class="service-detail">Rampas y ascensores</p>
+                        <span class="service-badge">100% accesible</span>
+                    </div>
                 </div>
 
-                <div class="service-item">
-                    <div class="service-icon">💳</div>
-                    <h3 class="service-title">Cajeros</h3>
-                    <p class="service-description">Todos los bancos</p>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="800px" height="800px"
+                                viewBox="0 0 32 32" version="1.1">
+                                <title>credit-card-front</title>
+                                <path
+                                    d="M28 5.25h-24c-1.518 0.002-2.748 1.232-2.75 2.75v16c0.002 1.518 1.232 2.748 2.75 2.75h24c1.518-0.002 2.748-1.232 2.75-2.75v-16c-0.002-1.518-1.232-2.748-2.75-2.75h-0zM29.25 24c-0.001 0.69-0.56 1.249-1.25 1.25h-24c-0.69-0.001-1.249-0.56-1.25-1.25v-16c0.001-0.69 0.56-1.249 1.25-1.25h24c0.69 0.001 1.249 0.56 1.25 1.25v0zM10 21.25h-4c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h4c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM20 21.25h-6c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h6c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM24 17.25h-18c-0.414 0-0.75 0.336-0.75 0.75s0.336 0.75 0.75 0.75v0h18c0.414 0 0.75-0.336 0.75-0.75s-0.336-0.75-0.75-0.75v0zM26 9.25h-6c-0.414 0-0.75 0.336-0.75 0.75v0 4c0 0.414 0.336 0.75 0.75 0.75h6c0.414-0 0.75-0.336 0.75-0.75v0-4c-0-0.414-0.336-0.75-0.75-0.75v0zM25.25 13.25h-4.5v-2.5h4.5z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-info">
+                        <h3 class="service-name">Cajeros Automáticos</h3>
+                        <p class="service-detail">Red Link y Banelco</p>
+                        <span class="service-badge">Todos los bancos</span>
+                    </div>
                 </div>
             </div>
 
@@ -246,27 +315,38 @@
     <section class="section section-light" id="horarios">
         <div class="container">
             <h2 class="section-title">Horarios de Atención</h2>
+            <p class="section-subtitle">Abierto todos los días del año</p>
 
-            <div class="grid grid-2 schedule-grid">
-                <div class="card schedule-card">
-                    <div class="card-body">
-                        <h3 class="schedule-title">Centro Comercial</h3>
-                        <div class="schedule-content">
-                            <p class="schedule-day"><strong>Lunes a Domingo</strong></p>
-                            <p class="schedule-hours">10:00 - 22:00</p>
+            <div class="schedule-container">
+                <div class="schedule-card-modern">
+                    <div class="schedule-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+                        </svg>
+                    </div>
+                    <div class="schedule-info">
+                        <h3 class="schedule-heading">Centro Comercial</h3>
+                        <div class="schedule-time-block">
+                            <span class="schedule-days">Lunes a Domingo</span>
+                            <span class="schedule-hours-large">10:00 - 22:00</span>
                         </div>
-                        <p class="schedule-note">Horario general de tiendas y servicios</p>
+                        <p class="schedule-description">Tiendas, servicios y entretenimiento</p>
                     </div>
                 </div>
 
-                <div class="card schedule-card">
-                    <div class="card-body">
-                        <h3 class="schedule-title">Zona Gastronómica</h3>
-                        <div class="schedule-content">
-                            <p class="schedule-day"><strong>Lunes a Domingo</strong></p>
-                            <p class="schedule-hours">10:00 - 24:00</p>
+                <div class="schedule-card-modern">
+                    <div class="schedule-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+                        </svg>
+                    </div>
+                    <div class="schedule-info">
+                        <h3 class="schedule-heading">Zona Gastronómica</h3>
+                        <div class="schedule-time-block">
+                            <span class="schedule-days">Todos los días</span>
+                            <span class="schedule-hours-large">10:00 - 24:00</span>
                         </div>
-                        <p class="schedule-note">Restaurantes y cafeterías</p>
+                        <p class="schedule-description">Restaurantes, cafeterías y bares</p>
                     </div>
                 </div>
             </div>
