@@ -671,6 +671,16 @@ button {
   transition: var(--transition-base);
 }
 
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--white) !important;
+}
+
+.social-link svg path {
+  fill: var(--white) !important;
+}
+
 .social-link:hover {
   background-color: var(--accent-color);
   transform: translateY(-3px);
@@ -1035,6 +1045,14 @@ button {
   color: var(--text-light);
 }
 
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
 /* FOOTER NEWSLETTER */
 .newsletter-input {
   padding: var(--spacing-sm);
@@ -1074,6 +1092,40 @@ button {
 .promo-card .card-img {
   height: 220px;
   object-fit: cover;
+}
+
+
+/* CALL TO ACTION (CTA) */
+.cta-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-text {
+  font-size: var(--font-size-xl);
+  color: var(--medium-gray);
+  margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* ==========================================
@@ -1198,5 +1250,356 @@ button {
 
   .schedule-hours-large {
     font-size: var(--font-size-2xl);
+  }
+}
+
+/* ========================================
+   PÁGINA DE CONTACTO
+   ======================================== */
+
+/* Hero simple para páginas internas */
+.hero-simple {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Layout de dos columnas */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  margin-top: var(--spacing-3xl);
+}
+
+/* Columna de información */
+.contact-info-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.contact-info-card {
+  background: var(--white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-item {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item .service-icon-wrapper {
+  padding: 10px;
+}
+
+.contact-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-item-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-item p {
+  margin: var(--spacing-xs) 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border: none;
+  margin-top: var(--spacing-lg);
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #128c7e 0%, #075e54 100%);
+  transform: translateY(-2px);
+}
+
+/* Redes sociales en contacto */
+.contact-social {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-color);
+}
+
+.contact-social .social-links {
+  margin-top: var(--spacing-md);
+}
+
+/* Mapa */
+.contact-map-container {
+  background: var(--white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-map-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-md);
+}
+
+.contact-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+/* Columna del formulario */
+.contact-form-column {
+  position: relative;
+}
+
+.contact-form-card {
+  background: var(--white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: var(--spacing-xl);
+}
+
+.form-description {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-2xl);
+  line-height: 1.6;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: var(--font-size-sm);
+}
+
+.form-input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* Estados de validación */
+.input-error {
+  border-color: var(--accent-color);
+  animation: shake 0.3s;
+}
+
+.input-success {
+  border-color: #10b981;
+}
+
+.form-error {
+  color: var(--accent-color);
+  font-size: var(--font-size-sm);
+  display: none;
+  margin-top: var(--spacing-xs);
+}
+
+/* Animación de shake para errores */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Checkbox */
+.form-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+}
+
+.form-checkbox-label input[type="checkbox"] {
+  margin-top: 2px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.form-checkbox-label span {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Botón de envío */
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Mensaje de éxito */
+.alert {
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  display: none;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  animation: slideIn 0.5s ease-out;
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border: 2px solid #10b981;
+  color: #065f46;
+}
+
+.alert-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  stroke: #10b981;
+}
+
+.alert h3 {
+  margin: 0 0 var(--spacing-xs);
+  color: #065f46;
+  font-size: var(--font-size-lg);
+}
+
+.alert p {
+  margin: 0;
+  color: #047857;
+  line-height: 1.6;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+  
+  .contact-form-card {
+    position: static;
+  }
+  
+  .contact-map-wrapper {
+    padding-bottom: 66.67%; /* Aspect ratio 3:2 en tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-simple {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+  }
+  
+  .contact-info-card,
+  .contact-map-container,
+  .contact-form-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .btn-whatsapp {
+    font-size: var(--font-size-base);
+  }
+  
+  .contact-map-wrapper {
+    padding-bottom: 75%; /* Aspect ratio 4:3 en móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-layout {
+    gap: var(--spacing-lg);
+  }
+  
+  .contact-info-card,
+  .contact-map-container,
+  .contact-form-card {
+    padding: var(--spacing-md);
+  }
+  
+  .contact-map-wrapper {
+    padding-bottom: 100%; /* Aspect ratio 1:1 en móviles pequeños */
+  }
+  
+  .form-input {
+    font-size: var(--font-size-sm);
   }
 }

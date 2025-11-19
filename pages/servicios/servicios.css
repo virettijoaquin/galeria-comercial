@@ -261,6 +261,7 @@
   font-size: var(--font-size-xl);
   color: var(--medium-gray);
   margin-bottom: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
 }
 
 .cta-buttons {
