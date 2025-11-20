@@ -3214,14 +3214,14 @@ details p {
 }
 
 .store-description {
-  color: var(--text-muted);
+  color: #555;
   margin-bottom: var(--spacing-md);
   line-height: 1.6;
 }
 
 .store-location {
   font-size: var(--font-size-sm);
-  color: var(--text-muted);
+  color: #555;
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
@@ -3231,11 +3231,43 @@ details p {
   padding: var(--spacing-md) var(--spacing-lg);
   border-top: 1px solid var(--border-color);
   background: #f8f9fa;
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
 }
 
 .store-card-footer .btn {
-  width: 100%;
+  flex: 1;
   justify-content: center;
+}
+
+/* Botón de sitio web sutil */
+.btn-website {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-website:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-website svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* Mensaje vacío */
