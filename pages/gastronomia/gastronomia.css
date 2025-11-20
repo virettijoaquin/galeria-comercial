@@ -1,5 +1,5 @@
 .hero-gastro {
-  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+  background: linear-gradient(135deg, #E67E22 0%, #D35400 100%) !important;
 }
 
 .gastro-intro-container {
