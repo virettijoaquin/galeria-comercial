@@ -2199,6 +2199,17 @@ details p {
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Hero variante para mapa */
+.hero-map {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #2980b9 100%);
+}
+
+.hero-map::before {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(52, 152, 219, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(41, 128, 185, 0.3) 0%, transparent 50%);
+}
+
 /* ========================================
    PÁGINA DE FAMILIA
    ======================================== */
