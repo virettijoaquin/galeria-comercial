@@ -3114,6 +3114,11 @@ details p {
    ========================================== */
 
 @media (max-width: 1200px) {
+  #tiendas-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
   .card-container {
     margin-right: calc(0.6 * var(--gutter-x));
     margin-left: calc(0.6 * var(--gutter-x));
@@ -3134,6 +3139,20 @@ details p {
 }
 
 @media (max-width: 768px) {
+  #tiendas-list {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+  
+  #tiendas-list .tienda {
+    padding: var(--spacing-sm);
+  }
+  
+  #tiendas-list .tienda strong {
+    font-size: var(--font-size-sm);
+  }
+  
   .col-md-6 {
     width: 100%;
     flex: 0 0 auto;
