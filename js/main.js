@@ -209,22 +209,35 @@ function initScrollAnimations() {
 function initActiveNavLinks() {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".navbar-link");
+  const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
 
-  // Guardar enlaces que ya tienen active desde el HTML (páginas actuales)
+  // Guardar TODOS los enlaces que ya tienen active desde el HTML (páginas actuales)
   const preActiveLinks = [];
+  const preActiveButtons = [];
+  const preActiveDropdownLinks = [];
+
   navLinks.forEach(link => {
     if (link.classList.contains('active')) {
-      preActiveLinks.push(link);
+      // Distinguir entre enlaces normales y botones
+      if (link.classList.contains('btn')) {
+        preActiveButtons.push(link);
+      } else {
+        preActiveLinks.push(link);
+      }
     }
   });
 
   // También guardar enlaces activos en dropdown
-  const dropdownLinks = document.querySelectorAll('.dropdown-menu a.active');
+  dropdownLinks.forEach(link => {
+    if (link.classList.contains('active')) {
+      preActiveDropdownLinks.push(link);
+    }
+  });
 
   window.addEventListener("scroll", function () {
     // Solo activar scroll links si NO hay enlaces pre-activos (páginas multi-página)
     // y solo para enlaces con href que empiecen con #
-    if (preActiveLinks.length === 0 && dropdownLinks.length === 0) {
+    if (preActiveLinks.length === 0 && preActiveDropdownLinks.length === 0) {
       let current = "";
       const headerHeight = document.querySelector(".header").offsetHeight;
 
@@ -239,8 +252,8 @@ function initActiveNavLinks() {
 
       navLinks.forEach(link => {
         const href = link.getAttribute("href");
-        // Solo modificar enlaces de tipo anchor (#)
-        if (href && href.startsWith("#")) {
+        // Solo modificar enlaces de tipo anchor (#) y que NO sean botones pre-activos
+        if (href && href.startsWith("#") && !preActiveButtons.includes(link)) {
           link.classList.remove("active");
           if (href === `#${current}`) {
             link.classList.add("active");

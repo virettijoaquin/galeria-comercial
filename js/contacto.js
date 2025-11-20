@@ -1,216 +1,212 @@
-// ==========================================
-// VALIDACIONES DEL FORMULARIO DE CONTACTO
-// ==========================================
+$(document).ready(function() {
+    console.log('Contacto.js cargado');
+    const $form = $('#contactForm');
+    const $modal = $('#modal-contacto');
+    const $cerrarModalBtn = $('#cerrar-modal-contacto');
+    console.log('Modal encontrado:', $modal.length);
+    console.log('Form encontrado:', $form.length);
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-    
     // Elementos del formulario
-    const nombre = document.getElementById('nombre');
-    const email = document.getElementById('email');
-    const telefono = document.getElementById('telefono');
-    const asunto = document.getElementById('asunto');
-    const mensaje = document.getElementById('mensaje');
-    const aceptaTerminos = document.getElementById('aceptaTerminos');
-    
+    const $nombre = $('#nombre');
+    const $email = $('#email');
+    const $telefono = $('#telefono');
+    const $asunto = $('#asunto');
+    const $mensaje = $('#mensaje');
+    const $aceptaTerminos = $('#aceptaTerminos');
+
     // Elementos de error
-    const nombreError = document.getElementById('nombreError');
-    const emailError = document.getElementById('emailError');
-    const telefonoError = document.getElementById('telefonoError');
-    const asuntoError = document.getElementById('asuntoError');
-    const mensajeError = document.getElementById('mensajeError');
-    const terminosError = document.getElementById('terminosError');
-    
+    const $nombreError = $('#nombreError');
+    const $emailError = $('#emailError');
+    const $telefonoError = $('#telefonoError');
+    const $asuntoError = $('#asuntoError');
+    const $mensajeError = $('#mensajeError');
+    const $terminosError = $('#terminosError');
+
     // Expresiones regulares para validación
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const telefonoRegex = /^[\d\s\+\-\(\)]{7,20}$/;
     const nombreRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{2,50}$/;
     
     // Función para mostrar error
-    function mostrarError(input, errorElement, mensaje) {
-        errorElement.textContent = mensaje;
-        errorElement.style.display = 'block';
-        input.classList.add('input-error');
-        input.classList.remove('input-success');
+    function mostrarError($input, $errorElement, mensaje) {
+        $errorElement.text(mensaje).addClass('active').show();
+        $input.addClass('input-error').removeClass('input-success');
     }
-    
+
     // Función para limpiar error
-    function limpiarError(input, errorElement) {
-        errorElement.textContent = '';
-        errorElement.style.display = 'none';
-        input.classList.remove('input-error');
-        input.classList.add('input-success');
+    function limpiarError($input, $errorElement) {
+        $errorElement.text('').removeClass('active').hide();
+        $input.removeClass('input-error').addClass('input-success');
     }
-    
+
     // Función para remover estado de éxito
-    function removerEstadoSuccess(input) {
-        input.classList.remove('input-success');
+    function removerEstadoSuccess($input) {
+        $input.removeClass('input-success');
     }
     
     // Validación en tiempo real del nombre
-    nombre.addEventListener('blur', function() {
+    $nombre.on('blur', function() {
         validarNombre();
     });
-    
-    nombre.addEventListener('input', function() {
-        if (nombreError.textContent !== '') {
+
+    $nombre.on('input', function() {
+        if ($nombreError.text() !== '') {
             validarNombre();
         }
     });
-    
+
     function validarNombre() {
-        const valorNombre = nombre.value.trim();
-        
+        const valorNombre = $nombre.val().trim();
+
         if (valorNombre === '') {
-            mostrarError(nombre, nombreError, 'El nombre es obligatorio');
+            mostrarError($nombre, $nombreError, 'El nombre es obligatorio');
             return false;
         }
-        
+
         if (valorNombre.length < 2) {
-            mostrarError(nombre, nombreError, 'El nombre debe tener al menos 2 caracteres');
+            mostrarError($nombre, $nombreError, 'El nombre debe tener al menos 2 caracteres');
             return false;
         }
-        
+
         if (valorNombre.length > 50) {
-            mostrarError(nombre, nombreError, 'El nombre no puede exceder 50 caracteres');
+            mostrarError($nombre, $nombreError, 'El nombre no puede exceder 50 caracteres');
             return false;
         }
-        
+
         if (!nombreRegex.test(valorNombre)) {
-            mostrarError(nombre, nombreError, 'El nombre solo puede contener letras y espacios');
+            mostrarError($nombre, $nombreError, 'El nombre solo puede contener letras y espacios');
             return false;
         }
-        
-        limpiarError(nombre, nombreError);
+
+        limpiarError($nombre, $nombreError);
         return true;
     }
     
     // Validación en tiempo real del email
-    email.addEventListener('blur', function() {
+    $email.on('blur', function() {
         validarEmail();
     });
-    
-    email.addEventListener('input', function() {
-        if (emailError.textContent !== '') {
+
+    $email.on('input', function() {
+        if ($emailError.text() !== '') {
             validarEmail();
         }
     });
-    
+
     function validarEmail() {
-        const valorEmail = email.value.trim();
-        
+        const valorEmail = $email.val().trim();
+
         if (valorEmail === '') {
-            mostrarError(email, emailError, 'El email es obligatorio');
+            mostrarError($email, $emailError, 'El email es obligatorio');
             return false;
         }
-        
+
         if (!emailRegex.test(valorEmail)) {
-            mostrarError(email, emailError, 'Por favor ingresa un email válido');
+            mostrarError($email, $emailError, 'Por favor ingresa un email válido');
             return false;
         }
-        
-        limpiarError(email, emailError);
+
+        limpiarError($email, $emailError);
         return true;
     }
     
     // Validación del teléfono (opcional)
-    telefono.addEventListener('blur', function() {
+    $telefono.on('blur', function() {
         validarTelefono();
     });
-    
-    telefono.addEventListener('input', function() {
-        if (telefonoError.textContent !== '') {
+
+    $telefono.on('input', function() {
+        if ($telefonoError.text() !== '') {
             validarTelefono();
         }
     });
-    
+
     function validarTelefono() {
-        const valorTelefono = telefono.value.trim();
-        
+        const valorTelefono = $telefono.val().trim();
+
         // El teléfono es opcional, así que si está vacío es válido
         if (valorTelefono === '') {
-            removerEstadoSuccess(telefono);
-            limpiarError(telefono, telefonoError);
+            removerEstadoSuccess($telefono);
+            limpiarError($telefono, $telefonoError);
             return true;
         }
-        
+
         if (!telefonoRegex.test(valorTelefono)) {
-            mostrarError(telefono, telefonoError, 'Por favor ingresa un teléfono válido (7-20 dígitos)');
+            mostrarError($telefono, $telefonoError, 'Por favor ingresa un teléfono válido (7-20 dígitos)');
             return false;
         }
-        
-        limpiarError(telefono, telefonoError);
+
+        limpiarError($telefono, $telefonoError);
         return true;
     }
     
     // Validación del asunto
-    asunto.addEventListener('change', function() {
+    $asunto.on('change', function() {
         validarAsunto();
     });
-    
+
     function validarAsunto() {
-        if (asunto.value === '') {
-            mostrarError(asunto, asuntoError, 'Por favor selecciona un asunto');
+        if ($asunto.val() === '') {
+            mostrarError($asunto, $asuntoError, 'Por favor selecciona un asunto');
             return false;
         }
-        
-        limpiarError(asunto, asuntoError);
+
+        limpiarError($asunto, $asuntoError);
         return true;
     }
     
     // Validación del mensaje
-    mensaje.addEventListener('blur', function() {
+    $mensaje.on('blur', function() {
         validarMensaje();
     });
-    
-    mensaje.addEventListener('input', function() {
-        if (mensajeError.textContent !== '') {
+
+    $mensaje.on('input', function() {
+        if ($mensajeError.text() !== '') {
             validarMensaje();
         }
     });
-    
+
     function validarMensaje() {
-        const valorMensaje = mensaje.value.trim();
-        
+        const valorMensaje = $mensaje.val().trim();
+
         if (valorMensaje === '') {
-            mostrarError(mensaje, mensajeError, 'El mensaje es obligatorio');
+            mostrarError($mensaje, $mensajeError, 'El mensaje es obligatorio');
             return false;
         }
-        
+
         if (valorMensaje.length < 10) {
-            mostrarError(mensaje, mensajeError, 'El mensaje debe tener al menos 10 caracteres');
+            mostrarError($mensaje, $mensajeError, 'El mensaje debe tener al menos 10 caracteres');
             return false;
         }
-        
+
         if (valorMensaje.length > 500) {
-            mostrarError(mensaje, mensajeError, 'El mensaje no puede exceder 500 caracteres');
+            mostrarError($mensaje, $mensajeError, 'El mensaje no puede exceder 500 caracteres');
             return false;
         }
-        
-        limpiarError(mensaje, mensajeError);
+
+        limpiarError($mensaje, $mensajeError);
         return true;
     }
     
     // Validación de términos y condiciones
-    aceptaTerminos.addEventListener('change', function() {
+    $aceptaTerminos.on('change', function() {
         validarTerminos();
     });
-    
+
     function validarTerminos() {
-        if (!aceptaTerminos.checked) {
-            mostrarError(aceptaTerminos, terminosError, 'Debes aceptar la política de privacidad');
+        if (!$aceptaTerminos.is(':checked')) {
+            mostrarError($aceptaTerminos, $terminosError, 'Debes aceptar la política de privacidad');
             return false;
         }
-        
-        limpiarError(aceptaTerminos, terminosError);
+
+        limpiarError($aceptaTerminos, $terminosError);
         return true;
     }
     
     // Validación completa del formulario al enviar
-    form.addEventListener('submit', function(e) {
+    $form.on('submit', function(e) {
         e.preventDefault();
-        
+
         // Ejecutar todas las validaciones
         const nombreValido = validarNombre();
         const emailValido = validarEmail();
@@ -218,70 +214,76 @@ document.addEventListener('DOMContentLoaded', function() {
         const asuntoValido = validarAsunto();
         const mensajeValido = validarMensaje();
         const terminosValidos = validarTerminos();
-        
+
         // Si todas las validaciones pasan
         if (nombreValido && emailValido && telefonoValido && asuntoValido && mensajeValido && terminosValidos) {
             // Simular envío del formulario
             enviarFormulario();
         } else {
             // Hacer scroll al primer error
-            const primerError = document.querySelector('.input-error');
-            if (primerError) {
-                primerError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                primerError.focus();
+            const $primerError = $('.input-error').first();
+            if ($primerError.length) {
+                $('html, body').animate({
+                    scrollTop: $primerError.offset().top - 100
+                }, 500);
+                $primerError.focus();
             }
         }
     });
     
     // Función para simular el envío del formulario
     function enviarFormulario() {
+        console.log('Enviando formulario...');
         // Mostrar indicador de carga (opcional)
-        const submitButton = form.querySelector('button[type="submit"]');
-        const textoOriginal = submitButton.textContent;
-        submitButton.textContent = 'Enviando...';
-        submitButton.disabled = true;
-        
+        const $submitButton = $form.find('button[type="submit"]');
+        const textoOriginal = $submitButton.text();
+        $submitButton.text('Enviando...').prop('disabled', true);
+
         // Simular delay de envío (1.5 segundos)
         setTimeout(function() {
-            // Ocultar el formulario
-            form.style.display = 'none';
-            
-            // Mostrar mensaje de éxito
-            successMessage.style.display = 'flex';
-            
-            // Hacer scroll al mensaje de éxito
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
+            console.log('Mostrando modal...');
+            console.log('Modal elemento:', $modal);
+            console.log('Display antes:', $modal.css('display'));
+
+            // Mostrar modal de éxito
+            $modal.css('display', 'flex').hide().fadeIn(300);
+
+            console.log('Display después:', $modal.css('display'));
+
             // Limpiar el formulario
-            form.reset();
-            
+            $form[0].reset();
+
             // Remover todas las clases de éxito/error
-            const inputs = form.querySelectorAll('.form-input');
-            inputs.forEach(input => {
-                input.classList.remove('input-error', 'input-success');
-            });
-            
-            // Después de 5 segundos, ocultar el mensaje y mostrar el formulario nuevamente
-            setTimeout(function() {
-                successMessage.style.display = 'none';
-                form.style.display = 'block';
-                submitButton.textContent = textoOriginal;
-                submitButton.disabled = false;
-            }, 5000);
-            
+            $form.find('.form-input').removeClass('input-error input-success');
+
+            // Restaurar botón
+            $submitButton.text(textoOriginal).prop('disabled', false);
+
         }, 1500);
     }
-    
-    // Prevenir pegado de espacios en blanco en campos de email
-    email.addEventListener('paste', function(e) {
-        setTimeout(function() {
-            email.value = email.value.trim();
-        }, 10);
+
+    // Cerrar modal
+    $cerrarModalBtn.on('click', function() {
+        $modal.fadeOut(300);
+    });
+
+    // Cerrar modal al hacer clic fuera de él
+    $modal.on('click', function(e) {
+        if ($(e.target).is($modal)) {
+            $modal.fadeOut(300);
+        }
     });
     
+    // Prevenir pegado de espacios en blanco en campos de email
+    $email.on('paste', function() {
+        setTimeout(function() {
+            $email.val($email.val().trim());
+        }, 10);
+    });
+
     // Formatear teléfono mientras se escribe (opcional)
-    telefono.addEventListener('input', function(e) {
-        let valor = telefono.value.replace(/[^\d\+\-\(\)\s]/g, '');
-        telefono.value = valor;
+    $telefono.on('input', function() {
+        let valor = $telefono.val().replace(/[^\d\+\-\(\)\s]/g, '');
+        $telefono.val(valor);
     });
 });
