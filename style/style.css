@@ -2955,6 +2955,16 @@ details p {
   width: 50%;
 }
 
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 33.33333%;
+}
+
+.col-md-8 {
+  flex: 0 0 auto;
+  width: 66.66667%;
+}
+
 .my-3 {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important;
@@ -2999,6 +3009,7 @@ details p {
   border: 1px solid var(--border-light);
   border-radius: 8px;
   overflow: hidden;
+  background: white;
 }
 
 .mall-map {
@@ -3011,6 +3022,52 @@ details p {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Mapa SVG */
+.mall-map object {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: all;
+  border-radius: 8px;
+}
+
+.mall-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos que se aplicarán dentro del SVG */
+.mall-map svg .local {
+  transition: all 0.3s ease;
+}
+
+.mall-map svg .local:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.mall-map svg .local.selected {
+  animation: pulseLocal 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseLocal {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Asegurar que los objects estén bien posicionados */
+.map-container {
+  min-height: 500px;
+}
+
+.map-container .mall-map {
+  min-height: 450px;
 }
 
 .d-none {
@@ -3153,7 +3210,9 @@ details p {
     font-size: var(--font-size-sm);
   }
   
-  .col-md-6 {
+  .col-md-6,
+  .col-md-4,
+  .col-md-8 {
     width: 100%;
     flex: 0 0 auto;
   }

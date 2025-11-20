@@ -468,34 +468,11 @@ if (busqueda) {
     });
   }
 
-  // Renderizar marcadores en el mapa
+  // Renderizar marcadores en el mapa (ya no necesario con SVG, pero lo dejamos por compatibilidad)
   function renderTiendasOnMap() {
-    maps.forEach(map => {
-      // Limpiar marcadores existentes
-      const existingMarkers = map.querySelectorAll('.tienda-marker');
-      existingMarkers.forEach(marker => marker.remove());
-      
-      const mapPiso = map.dataset.piso;
-      
-      // Agregar marcadores para tiendas del piso actual
-      tiendasData.forEach(tienda => {
-        const pisoNormalizado = normalizePiso(tienda.piso);
-        
-        if (pisoNormalizado === mapPiso) {
-          const marker = document.createElement('div');
-          marker.className = 'tienda-marker';
-          marker.style.left = tienda.mapX + '%';
-          marker.style.top = tienda.mapY + '%';
-          marker.title = tienda.nombre;
-          
-          marker.addEventListener('click', () => {
-            showTiendaOnMap(tienda);
-          });
-          
-          map.appendChild(marker);
-        }
-      });
-    });
+    // Los marcadores ahora están en el SVG, no necesitamos crearlos aquí
+    // Esta función se mantiene vacía para no romper el código existente
+    console.log('Mapas SVG cargados - marcadores integrados en SVG');
   }
 
   // Mostrar tienda en el mapa
@@ -511,14 +488,26 @@ if (busqueda) {
       });
     }
     
-    // Mostrar logo en el mapa
-    const logoSrc = tienda.logoImg || '../assets/img/logo.png';
-    mapaLogo.src = logoSrc;
-    mapaLogo.style.left = tienda.mapX + '%';
-    mapaLogo.style.top = tienda.mapY + '%';
-    mapaLogo.style.display = 'block';
+    // Resaltar local en SVG
+    setTimeout(() => {
+      const svgObjects = document.querySelectorAll('.mall-map:not(.d-none) object');
+      svgObjects.forEach(obj => {
+        const svgDoc = obj.contentDocument;
+        if (svgDoc) {
+          // Remover selección de todos
+          svgDoc.querySelectorAll('.local').forEach(l => l.classList.remove('selected'));
+          
+          // Seleccionar el local de esta tienda
+          const local = svgDoc.querySelector(`.local[data-tienda-id="${tienda.id}"]`);
+          if (local) {
+            local.classList.add('selected');
+          }
+        }
+      });
+    }, 100);
 
     // Mostrar panel de información
+    const logoSrc = tienda.logoImg || '../assets/img/logo.png';
     panel_logo.src = logoSrc;
     panel_nombre.textContent = tienda.nombre;
     panel_info.textContent = getCategoryName(tienda.categoria) + ' - ' + pisoNormalizado;
