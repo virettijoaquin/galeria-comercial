@@ -424,10 +424,19 @@ if (busqueda) {
       const tienda = tiendasData.find(t => t.id == selectedTiendaId);
       
       if (tienda) {
+        // Scroll suave a la sección del mapa
+        const seccionMapa = document.getElementById('seccion-mapa');
+        if (seccionMapa) {
+          seccionMapa.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+        
         // Pequeño delay para asegurar que todo esté renderizado
         setTimeout(() => {
           showTiendaOnMap(tienda);
-        }, 300);
+        }, 500);
       }
       
       // Limpiar localStorage después de usar
