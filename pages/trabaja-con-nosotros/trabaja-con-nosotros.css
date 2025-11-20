@@ -75,6 +75,21 @@
 }
 
 .trabajo-card-icon {
+    width: 350px;  /* o el tamaño que prefieras */
+    height: 350px;
+    overflow: hidden;  /* esto corta cualquier parte que se salga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;  /* opcional, para esquinas redondeadas */
+}
+
+.trabajo-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* esto mantiene las proporciones y llena el espacio */
+}
+.trabajo-card-icon {
   font-size: 4rem;
   text-align: center;
   padding: var(--spacing-xl);
