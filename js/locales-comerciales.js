@@ -61,9 +61,14 @@ function createStoreCard(tienda) {
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
     
+    // Determinar si usar imagen o letra para el logo
+    const logoContent = tienda.logoImg 
+        ? `<img src="${tienda.logoImg}" alt="${tienda.nombre}" class="store-logo-img">` 
+        : tienda.logo;
+    
     card.innerHTML = `
         <div class="store-card-header">
-            <div class="store-logo">${tienda.logo}</div>
+            <div class="store-logo">${logoContent}</div>
             <span class="badge badge-${tienda.badgeColor}">${getCategoryName(tienda.categoria)}</span>
         </div>
         <div class="store-card-body">

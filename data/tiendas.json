@@ -7,15 +7,17 @@
       "descripcion": "Moda y accesorios para toda la familia",
       "ubicacion": "Planta Baja - Local 12",
       "logo": "Z",
+      "logoImg": "../assets/logos/zara-logo.png",
       "badgeColor": "primary"
     },
     {
       "id": 2,
-      "nombre": "Apple Store",
+      "nombre": "Mac Station",
       "categoria": "tecnologia",
       "descripcion": "Productos y accesorios Apple",
       "ubicacion": "Primer Piso - Local 45",
       "logo": "A",
+      "logoImg": "../assets/logos/apple-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -25,6 +27,7 @@
       "descripcion": "Ropa y calzado deportivo",
       "ubicacion": "Planta Baja - Local 8",
       "logo": "N",
+      "logoImg": "../assets/logos/nike-logo.jpg",
       "badgeColor": "secondary"
     },
     {
@@ -34,6 +37,7 @@
       "descripcion": "Moda urbana y casual",
       "ubicacion": "Planta Baja - Local 15",
       "logo": "H&M",
+      "logoImg": "../assets/logos/hm-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -43,6 +47,7 @@
       "descripcion": "Electrónica y smartphones",
       "ubicacion": "Primer Piso - Local 42",
       "logo": "S",
+      "logoImg": "../assets/logos/samsung-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -52,6 +57,7 @@
       "descripcion": "Cosméticos y perfumería",
       "ubicacion": "Planta Baja - Local 20",
       "logo": "S",
+      "logoImg": "../assets/logos/sephora-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -61,6 +67,7 @@
       "descripcion": "Ropa y calzado deportivo",
       "ubicacion": "Planta Baja - Local 10",
       "logo": "A",
+      "logoImg": "../assets/logos/adidas-logo.png",
       "badgeColor": "secondary"
     },
     {
@@ -70,6 +77,7 @@
       "descripcion": "Muebles y decoración",
       "ubicacion": "Segundo Piso - Local 60",
       "logo": "I",
+      "logoImg": "../assets/logos/ikea-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -79,6 +87,7 @@
       "descripcion": "Joyería y accesorios",
       "ubicacion": "Planta Baja - Local 25",
       "logo": "P",
+      "logoImg": "../assets/logos/pandora-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -88,6 +97,7 @@
       "descripcion": "Moda joven y urbana",
       "ubicacion": "Primer Piso - Local 30",
       "logo": "P",
+      "logoImg": "../assets/logos/pullbear-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -97,6 +107,7 @@
       "descripcion": "Librería y papelería",
       "ubicacion": "Primer Piso - Local 35",
       "logo": "Y",
+      "logoImg": "../assets/logos/yenny-logo.png",
       "badgeColor": "secondary"
     },
     {
@@ -106,6 +117,7 @@
       "descripcion": "Electrónica y tecnología",
       "ubicacion": "Primer Piso - Local 48",
       "logo": "M",
+      "logoImg": "../assets/logos/musimundo-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -115,6 +127,7 @@
       "descripcion": "Moda juvenil y tendencias",
       "ubicacion": "Planta Baja - Local 18",
       "logo": "B",
+      "logoImg": "../assets/logos/bershka-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -124,6 +137,7 @@
       "descripcion": "Relojes y accesorios",
       "ubicacion": "Planta Baja - Local 22",
       "logo": "S",
+      "logoImg": "../assets/logos/swatch-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -133,6 +147,7 @@
       "descripcion": "Ropa y calzado deportivo",
       "ubicacion": "Planta Baja - Local 9",
       "logo": "P",
+      "logoImg": "../assets/logos/puma-logo.png",
       "badgeColor": "secondary"
     },
     {
@@ -142,6 +157,7 @@
       "descripcion": "Farmacia y salud",
       "ubicacion": "Planta Baja - Local 5",
       "logo": "F",
+      "logoImg": "../assets/logos/farmacity-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -151,6 +167,7 @@
       "descripcion": "Moda femenina y accesorios",
       "ubicacion": "Primer Piso - Local 28",
       "logo": "S",
+      "logoImg": "../assets/logos/stradivarius-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -160,6 +177,7 @@
       "descripcion": "Audio y electrónica premium",
       "ubicacion": "Primer Piso - Local 50",
       "logo": "S",
+      "logoImg": "../assets/logos/sony-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -169,6 +187,7 @@
       "descripcion": "Calzado y ropa deportiva",
       "ubicacion": "Planta Baja - Local 11",
       "logo": "R",
+      "logoImg": "../assets/logos/reebok-logo.png",
       "badgeColor": "secondary"
     },
     {
@@ -178,6 +197,7 @@
       "descripcion": "Maquillaje profesional",
       "ubicacion": "Planta Baja - Local 21",
       "logo": "M",
+      "logoImg": "../assets/logos/mac-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -187,6 +207,7 @@
       "descripcion": "Decoración y textiles para el hogar",
       "ubicacion": "Segundo Piso - Local 62",
       "logo": "ZH",
+      "logoImg": "../assets/logos/zarahome-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -196,6 +217,7 @@
       "descripcion": "Relojes y accesorios de cuero",
       "ubicacion": "Planta Baja - Local 24",
       "logo": "F",
+      "logoImg": "../assets/logos/fossil-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -205,6 +227,7 @@
       "descripcion": "Moda elegante y sofisticada",
       "ubicacion": "Primer Piso - Local 32",
       "logo": "MD",
+      "logoImg": "../assets/logos/massimodutti-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -214,6 +237,7 @@
       "descripcion": "Smartwatches y dispositivos GPS",
       "ubicacion": "Primer Piso - Local 47",
       "logo": "G",
+      "logoImg": "../assets/logos/garmin-logo.png",
       "badgeColor": "accent"
     },
     {
@@ -223,6 +247,7 @@
       "descripcion": "Ropa deportiva de alto rendimiento",
       "ubicacion": "Planta Baja - Local 13",
       "logo": "UA",
+      "logoImg": "../assets/logos/underarmour-logo.png",
       "badgeColor": "secondary"
     },
     {
@@ -232,6 +257,7 @@
       "descripcion": "Cosméticos naturales y cuidado personal",
       "ubicacion": "Primer Piso - Local 38",
       "logo": "TBS",
+      "logoImg": "../assets/logos/bodyshop-logo.png",
       "badgeColor": "primary"
     },
     {
@@ -241,6 +267,7 @@
       "descripcion": "Librería y música",
       "ubicacion": "Primer Piso - Local 36",
       "logo": "C",
+      "logoImg": "../assets/logos/cuspide-logo.png",
       "badgeColor": "secondary"
     },
     {
@@ -250,6 +277,7 @@
       "descripcion": "Tienda por departamentos",
       "ubicacion": "Todos los pisos - Tienda ancla",
       "logo": "F",
+      "logoImg": "../assets/logos/falabella-logo.png",
       "badgeColor": "accent"
     }
   ]
