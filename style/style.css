@@ -1632,7 +1632,7 @@ button {
 
 .fun-pass-intro {
     font-size: 18px;
-    color: #F8F9FA;
+    color: #F8F9FA !important;
     text-align: center;
     line-height: 1.7;
     margin-bottom: 32px;
@@ -1681,7 +1681,7 @@ button {
 .fun-pass-cta {
     text-align: center;
     font-size: 17px;
-    color: #f4a261;
+    color: #f4a261 !important;
     font-weight: 600;
     margin: 0;
 }
