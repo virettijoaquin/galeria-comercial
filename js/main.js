@@ -209,6 +209,7 @@ function initScrollAnimations() {
 function initActiveNavLinks() {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".navbar-link");
+  const allNavbarLinks = document.querySelectorAll('.navbar-menu a');
   const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
 
   // Guardar TODOS los enlaces que ya tienen active desde el HTML (páginas actuales)
@@ -216,28 +217,25 @@ function initActiveNavLinks() {
   const preActiveButtons = [];
   const preActiveDropdownLinks = [];
 
-  navLinks.forEach(link => {
+  // Revisar todos los enlaces del navbar (incluyendo botones)
+  allNavbarLinks.forEach(link => {
     if (link.classList.contains('active')) {
       // Distinguir entre enlaces normales y botones
       if (link.classList.contains('btn')) {
         preActiveButtons.push(link);
+      } else if (link.parentElement.parentElement.classList.contains('dropdown-menu')) {
+        preActiveDropdownLinks.push(link);
       } else {
         preActiveLinks.push(link);
       }
     }
   });
 
-  // También guardar enlaces activos en dropdown
-  dropdownLinks.forEach(link => {
-    if (link.classList.contains('active')) {
-      preActiveDropdownLinks.push(link);
-    }
-  });
-
   window.addEventListener("scroll", function () {
     // Solo activar scroll links si NO hay enlaces pre-activos (páginas multi-página)
     // y solo para enlaces con href que empiecen con #
-    if (preActiveLinks.length === 0 && preActiveDropdownLinks.length === 0) {
+    // Y solo si hay secciones con id en la página
+    if (preActiveLinks.length === 0 && preActiveDropdownLinks.length === 0 && preActiveButtons.length === 0 && sections.length > 0) {
       let current = "";
       const headerHeight = document.querySelector(".header").offsetHeight;
 
@@ -250,16 +248,19 @@ function initActiveNavLinks() {
         }
       });
 
-      navLinks.forEach(link => {
-        const href = link.getAttribute("href");
-        // Solo modificar enlaces de tipo anchor (#) y que NO sean botones pre-activos
-        if (href && href.startsWith("#") && !preActiveButtons.includes(link)) {
-          link.classList.remove("active");
-          if (href === `#${current}`) {
-            link.classList.add("active");
+      // Solo modificar enlaces si hay una sección actual detectada
+      if (current) {
+        navLinks.forEach(link => {
+          const href = link.getAttribute("href");
+          // Solo modificar enlaces de tipo anchor (#)
+          if (href && href.startsWith("#")) {
+            link.classList.remove("active");
+            if (href === `#${current}`) {
+              link.classList.add("active");
+            }
           }
-        }
-      });
+        });
+      }
     }
 
     // Cambiar estilo del header al hacer scroll
@@ -365,22 +366,146 @@ function initScrollToTop() {
 initScrollToTop();
 
 // ==========================================
-// NEWSLETTER FORM (básico)
+// NEWSLETTER FORM Y MODAL
 // ==========================================
-const newsletterForm = document.querySelector(".footer-section button");
+
+// Función para cargar los modales de newsletter
+function loadNewsletterModals() {
+  // HTML del modal de éxito
+  const modalSuccessHTML = `
+    <!-- Modal Newsletter Éxito -->
+    <div id="modal-newsletter" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✓</div>
+            <h3 class="modal-title">¡Suscripción Exitosa!</h3>
+            <p class="modal-text">Gracias por suscribirte a nuestro newsletter. A partir de ahora recibirás nuestras mejores ofertas, promociones y novedades.</p>
+            <button class="btn btn-primary" id="cerrar-modal-newsletter">Aceptar</button>
+        </div>
+    </div>
+  `;
+
+  // HTML del modal de error
+  const modalErrorHTML = `
+    <!-- Modal Newsletter Error -->
+    <div id="modal-newsletter-error" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon modal-icon-error">✕</div>
+            <h3 class="modal-title">Email inválido</h3>
+            <p class="modal-text">Por favor, ingresa un email válido para suscribirte a nuestro newsletter.</p>
+            <button class="btn btn-primary" id="cerrar-modal-newsletter-error">Aceptar</button>
+        </div>
+    </div>
+  `;
+
+  // Insertar ambos modales al final del body
+  document.body.insertAdjacentHTML('beforeend', modalSuccessHTML);
+  document.body.insertAdjacentHTML('beforeend', modalErrorHTML);
+
+  // Inicializar los event listeners de los modales
+  initNewsletterModals();
+}
+
+// Función para inicializar los modales de newsletter
+function initNewsletterModals() {
+  const modalSuccess = document.getElementById('modal-newsletter');
+  const cerrarBtnSuccess = document.getElementById('cerrar-modal-newsletter');
+  const modalError = document.getElementById('modal-newsletter-error');
+  const cerrarBtnError = document.getElementById('cerrar-modal-newsletter-error');
+
+  // Event listeners para modal de éxito
+  if (cerrarBtnSuccess) {
+    cerrarBtnSuccess.addEventListener('click', function() {
+      modalSuccess.style.display = 'none';
+    });
+  }
+
+  modalSuccess.addEventListener('click', function(e) {
+    if (e.target === modalSuccess) {
+      modalSuccess.style.display = 'none';
+    }
+  });
+
+  // Event listeners para modal de error
+  if (cerrarBtnError) {
+    cerrarBtnError.addEventListener('click', function() {
+      modalError.style.display = 'none';
+    });
+  }
+
+  modalError.addEventListener('click', function(e) {
+    if (e.target === modalError) {
+      modalError.style.display = 'none';
+    }
+  });
+}
+
+// Inicializar el formulario de newsletter
+const newsletterForm = document.querySelector(".newsletter-button");
 if (newsletterForm) {
   newsletterForm.addEventListener("click", function (e) {
     e.preventDefault();
     const emailInput = this.previousElementSibling;
+    const emailValue = emailInput.value.trim();
 
-    if (emailInput && emailInput.value) {
-      // Aquí iría la lógica para enviar el email
-      alert("¡Gracias por suscribirte! Pronto recibirás nuestras novedades.");
+    // Validación básica de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (emailValue === '') {
+      // Mostrar modal de error si el email está vacío
+      const modalError = document.getElementById('modal-newsletter-error');
+      if (modalError) {
+        modalError.style.display = 'flex';
+      } else {
+        loadNewsletterModals();
+        setTimeout(() => {
+          const modalErrorLoaded = document.getElementById('modal-newsletter-error');
+          if (modalErrorLoaded) {
+            modalErrorLoaded.style.display = 'flex';
+          }
+        }, 100);
+      }
+      emailInput.focus();
+      return;
+    }
+
+    if (!emailRegex.test(emailValue)) {
+      // Mostrar modal de error si el email no es válido
+      const modalError = document.getElementById('modal-newsletter-error');
+      if (modalError) {
+        modalError.style.display = 'flex';
+      } else {
+        loadNewsletterModals();
+        setTimeout(() => {
+          const modalErrorLoaded = document.getElementById('modal-newsletter-error');
+          if (modalErrorLoaded) {
+            modalErrorLoaded.style.display = 'flex';
+          }
+        }, 100);
+      }
+      emailInput.focus();
+      return;
+    }
+
+    // Mostrar el modal de éxito
+    const modalSuccess = document.getElementById('modal-newsletter');
+    if (modalSuccess) {
+      modalSuccess.style.display = 'flex';
       emailInput.value = "";
     } else {
-      alert("Por favor, ingresa tu email.");
+      // Si el modal no existe aún, mostrarlo después de cargarlo
+      loadNewsletterModals();
+      setTimeout(() => {
+        const modalSuccessLoaded = document.getElementById('modal-newsletter');
+        if (modalSuccessLoaded) {
+          modalSuccessLoaded.style.display = 'flex';
+          emailInput.value = "";
+        }
+      }, 100);
     }
   });
+
+  // Cargar los modales cuando se carga la página
+  loadNewsletterModals();
 }
 
 console.log("Plaza Mayor - Website cargado correctamente ✅");

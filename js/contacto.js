@@ -1,10 +1,43 @@
 $(document).ready(function() {
     console.log('Contacto.js cargado');
+
+    // Cargar el modal dinámicamente
+    const modalHTML = `
+        <!-- Modal Contacto -->
+        <div id="modal-contacto" class="modal">
+            <div class="modal-content">
+                <div class="modal-icon">✓</div>
+                <h3 class="modal-title">¡Mensaje Enviado!</h3>
+                <p class="modal-text">Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos a la brevedad.</p>
+                <button class="btn btn-primary" id="cerrar-modal-contacto">Aceptar</button>
+            </div>
+        </div>
+    `;
+
+    $('body').append(modalHTML);
+    initContactModal();
+
     const $form = $('#contactForm');
-    const $modal = $('#modal-contacto');
-    const $cerrarModalBtn = $('#cerrar-modal-contacto');
-    console.log('Modal encontrado:', $modal.length);
     console.log('Form encontrado:', $form.length);
+
+    // Función para inicializar el modal de contacto
+    function initContactModal() {
+        const $modal = $('#modal-contacto');
+        const $cerrarModalBtn = $('#cerrar-modal-contacto');
+
+        if ($cerrarModalBtn.length) {
+            $cerrarModalBtn.on('click', function() {
+                $modal.fadeOut(300);
+            });
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        $modal.on('click', function(e) {
+            if ($(e.target).is($modal)) {
+                $modal.fadeOut(300);
+            }
+        });
+    }
 
     // Elementos del formulario
     const $nombre = $('#nombre');
@@ -242,13 +275,15 @@ $(document).ready(function() {
         // Simular delay de envío (1.5 segundos)
         setTimeout(function() {
             console.log('Mostrando modal...');
-            console.log('Modal elemento:', $modal);
-            console.log('Display antes:', $modal.css('display'));
 
-            // Mostrar modal de éxito
-            $modal.css('display', 'flex').hide().fadeIn(300);
+            const $modal = $('#modal-contacto');
 
-            console.log('Display después:', $modal.css('display'));
+            if ($modal.length) {
+                // Mostrar modal de éxito
+                $modal.css('display', 'flex').hide().fadeIn(300);
+            } else {
+                console.error('Modal no encontrado');
+            }
 
             // Limpiar el formulario
             $form[0].reset();
@@ -261,18 +296,6 @@ $(document).ready(function() {
 
         }, 1500);
     }
-
-    // Cerrar modal
-    $cerrarModalBtn.on('click', function() {
-        $modal.fadeOut(300);
-    });
-
-    // Cerrar modal al hacer clic fuera de él
-    $modal.on('click', function(e) {
-        if ($(e.target).is($modal)) {
-            $modal.fadeOut(300);
-        }
-    });
     
     // Prevenir pegado de espacios en blanco en campos de email
     $email.on('paste', function() {

@@ -3,6 +3,54 @@ $(document).ready(function() {
     let estudioCounter = 0;
     let puestoActual = '';
 
+    // Cargar el modal dinámicamente
+    const modalHTML = `
+        <!-- Modal de Éxito -->
+        <div id="modal-exito" class="modal">
+            <div class="modal-content">
+                <div class="modal-icon">✓</div>
+                <h3 class="modal-title">¡Postulación Enviada con Éxito!</h3>
+                <p class="modal-text">Gracias por tu interés en formar parte de nuestro equipo. Revisaremos tu postulación y nos pondremos en contacto contigo a la brevedad.</p>
+                <button class="btn btn-primary" id="cerrar-modal">Aceptar</button>
+            </div>
+        </div>
+    `;
+
+    $('body').append(modalHTML);
+    initTrabajoModal();
+
+    // Función para inicializar el modal de trabajo
+    function initTrabajoModal() {
+        const $modalExito = $('#modal-exito');
+        const $cerrarModalBtn = $('#cerrar-modal');
+
+        if ($cerrarModalBtn.length) {
+            $cerrarModalBtn.on('click', function() {
+                $modalExito.removeClass('show');
+                $('#formulario-postulacion')[0].reset();
+                $('#formulario-section').hide();
+                $('#experiencias-container').empty();
+                $('#estudios-container').empty();
+                experienciaCounter = 0;
+                estudioCounter = 0;
+                $('.error-message').text('');
+                $('.form-control').removeClass('error');
+
+                // Scroll al inicio
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 600);
+            });
+        }
+
+        // Cerrar modal al hacer clic fuera
+        $modalExito.on('click', function(e) {
+            if ($(e.target).is($modalExito)) {
+                $cerrarModalBtn.click();
+            }
+        });
+    }
+
     // Establecer fecha máxima para fecha de nacimiento (18 años atrás)
     const hoy = new Date();
     const hace18Anios = new Date(hoy.getFullYear() - 18, hoy.getMonth(), hoy.getDate());
@@ -775,7 +823,12 @@ $(document).ready(function() {
 
         // Si todo es válido, mostrar modal de éxito
         if (isValid) {
-            $('#modal-exito').addClass('show');
+            const $modalExito = $('#modal-exito');
+            if ($modalExito.length) {
+                $modalExito.addClass('show');
+            } else {
+                console.error('Modal de éxito no encontrado');
+            }
         } else {
             // Scroll al primer error
             const primerError = $('.form-control.error').first();
@@ -784,31 +837,6 @@ $(document).ready(function() {
                     scrollTop: primerError.offset().top - 100
                 }, 400);
             }
-        }
-    });
-
-    // Cerrar modal de éxito
-    $('#cerrar-modal').on('click', function() {
-        $('#modal-exito').removeClass('show');
-        $('#formulario-postulacion')[0].reset();
-        $('#formulario-section').hide();
-        $('#experiencias-container').empty();
-        $('#estudios-container').empty();
-        experienciaCounter = 0;
-        estudioCounter = 0;
-        $('.error-message').text('');
-        $('.form-control').removeClass('error');
-
-        // Scroll al inicio
-        $('html, body').animate({
-            scrollTop: 0
-        }, 600);
-    });
-
-    // Cerrar modal al hacer clic fuera
-    $('#modal-exito').on('click', function(e) {
-        if ($(e.target).is('#modal-exito')) {
-            $('#cerrar-modal').click();
         }
     });
 });

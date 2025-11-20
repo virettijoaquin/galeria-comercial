@@ -1190,7 +1190,7 @@ button {
 /* CALL TO ACTION (CTA) */
 .cta-content {
   text-align: center;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -2551,8 +2551,6 @@ details p {
   padding: var(--spacing-2xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  position: sticky;
-  top: var(--spacing-xl);
 }
 
 .form-description {
@@ -4109,6 +4107,11 @@ details p {
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
 }
 
+.modal-icon-error {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+}
+
 .modal-title {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
@@ -4118,7 +4121,7 @@ details p {
 
 .modal-text {
   font-size: var(--font-size-base);
-  color: var(--text-muted);
+  color: var(--text-primary);
   line-height: 1.6;
   margin-bottom: var(--spacing-2xl);
 }
