@@ -659,6 +659,16 @@ if (busqueda) {
     }
     
     panel.style.display = 'block';
+    
+    // En mobile, hacer scroll al mapa
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        const mapContainer = document.querySelector('.map-container');
+        if (mapContainer) {
+          mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 200);
+    }
   }
 
   // Normalizar nombre de piso
