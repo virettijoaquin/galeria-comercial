@@ -95,25 +95,28 @@
     <!-- TIENDAS Y MAPA -->
     <div class="card-container">
       <!-- TIENDAS -->
-      <div class="col-md-6">
+      <div class="col-md-4">
         <ul id="tiendas-list" class="card-container">
           <!-- Las tiendas se cargarán dinámicamente desde el JSON -->
       </div>
 
       <!-- MAPA -->
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="map-container">
-          <!-- Mapa Planta Baja -->
-          <img src="../assets/img/plano.png" class="img-fluid mall-map" data-piso="Planta Baja" />
+          <!-- Mapa Planta Baja SVG -->
+          <div class="mall-map" data-piso="Planta Baja">
+            <object data="../assets/img/mapa-planta-baja.svg" type="image/svg+xml" style="width: 100%; height: auto; pointer-events: all;"></object>
+          </div>
 
-          <!-- Mapa Primer Piso -->
-          <img src="../assets/img/plano.png" class="img-fluid mall-map d-none" data-piso="Primer Piso" />
+          <!-- Mapa Primer Piso SVG -->
+          <div class="mall-map d-none" data-piso="Primer Piso">
+            <object data="../assets/img/mapa-primer-piso.svg" type="image/svg+xml" style="width: 100%; height: auto; pointer-events: all;"></object>
+          </div>
 
-          <!-- Mapa Segundo Piso -->
-          <img src="../assets/img/plano.png" class="img-fluid mall-map d-none" data-piso="Segundo Piso" />
-
-          <!-- Logo Tienda en Mapa -->
-          <img id="mapaLogo" class="mapa-logo" src="" />
+          <!-- Mapa Segundo Piso SVG -->
+          <div class="mall-map d-none" data-piso="Segundo Piso">
+            <object data="../assets/img/mapa-segundo-piso.svg" type="image/svg+xml" style="width: 100%; height: auto; pointer-events: all;"></object>
+          </div>
         </div>
       </div>
     </div>
@@ -221,6 +224,51 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script src="../js/mapa-svg.js"></script>
+  <script>
+    // Inicializar SVG maps después de que todo esté cargado
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        // Obtener referencias a los SVGs dentro de los objects
+        const svgObjects = document.querySelectorAll('.mall-map object');
+        
+        svgObjects.forEach(function(obj) {
+          obj.addEventListener('load', function() {
+            const svgDoc = this.contentDocument;
+            if (svgDoc && typeof initSvgMap === 'function' && typeof tiendasData !== 'undefined') {
+              // Inicializar interactividad en este SVG
+              const locales = svgDoc.querySelectorAll('.local[data-tienda-id]');
+              locales.forEach(function(local) {
+                const tiendaId = parseInt(local.dataset.tiendaId);
+                
+                local.style.cursor = 'pointer';
+                local.addEventListener('click', function() {
+                  // Remover selección de todos los locales
+                  document.querySelectorAll('.mall-map object').forEach(function(o) {
+                    const doc = o.contentDocument;
+                    if (doc) {
+                      doc.querySelectorAll('.local').forEach(function(l) {
+                        l.classList.remove('selected');
+                      });
+                    }
+                  });
+                  
+                  // Seleccionar este
+                  this.classList.add('selected');
+                  
+                  // Mostrar tienda
+                  const tienda = tiendasData.find(function(t) { return t.id === tiendaId; });
+                  if (tienda && typeof showTiendaOnMap === 'function') {
+                    showTiendaOnMap(tienda);
+                  }
+                });
+              });
+            }
+          });
+        });
+      }, 500);
+    });
+  </script>
 </body>
 
 </html>

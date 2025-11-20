@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" id="mapa-svg-primer-piso">
+  <defs>
+    <style>
+      .local {
+        fill: #F3E5F5;
+        stroke: #7B1FA2;
+        stroke-width: 2;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .local:hover {
+        fill: #E1BEE7;
+        stroke: #4A148C;
+        stroke-width: 3;
+        filter: drop-shadow(0 4px 8px rgba(123, 31, 162, 0.3));
+      }
+      .local.selected {
+        fill: #BA68C8;
+        stroke: #4A148C;
+        stroke-width: 3;
+        animation: pulseLocal 1.5s ease-in-out infinite;
+      }
+      @keyframes pulseLocal {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      .pasillo {
+        fill: #FAFAFA;
+        stroke: #BDBDBD;
+        stroke-width: 2;
+      }
+      .local-text {
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+        fill: #7B1FA2;
+        text-anchor: middle;
+        pointer-events: none;
+        font-weight: 700;
+      }
+      .escaleras {
+        fill: #FFE0B2;
+        stroke: #F57C00;
+        stroke-width: 2;
+      }
+      .food-court {
+        fill: #FFF9C4;
+        stroke: #F57F17;
+        stroke-width: 2;
+      }
+    </style>
+  </defs>
+
+  <!-- Área central de pasillos -->
+  <rect class="pasillo" x="300" y="200" width="400" height="250" rx="10" />
+  <ellipse class="pasillo" cx="500" cy="325" rx="100" ry="70" />
+
+  <!-- PRIMER PISO - 11 Locales -->
+  
+  <!-- Fila Superior -->
+  <rect class="local" data-tienda-id="2" x="50" y="30" width="170" height="100" rx="5" />
+  <text class="local-text" x="135" y="85">Personal</text>
+  
+  <rect class="local" data-tienda-id="5" x="240" y="30" width="170" height="100" rx="5" />
+  <text class="local-text" x="325" y="85">Samsung</text>
+  
+  <rect class="local" data-tienda-id="17" x="430" y="30" width="170" height="100" rx="5" />
+  <text class="local-text" x="515" y="85">Port Said</text>
+  
+  <rect class="local" data-tienda-id="18" x="620" y="30" width="160" height="100" rx="5" />
+  <text class="local-text" x="700" y="85">Sony</text>
+  
+  <rect class="local" data-tienda-id="23" x="800" y="30" width="150" height="100" rx="5" />
+  <text class="local-text" x="875" y="85">Massimo Dutti</text>
+
+  <!-- Columna Izquierda -->
+  <rect class="local" data-tienda-id="24" x="50" y="150" width="160" height="120" rx="5" />
+  <text class="local-text" x="130" y="215">Garmin</text>
+  
+  <rect class="local" data-tienda-id="26" x="50" y="290" width="160" height="140" rx="5" />
+  <text class="local-text" x="130" y="365">Body Shop</text>
+
+  <!-- Columna Derecha -->
+  <rect class="local" data-tienda-id="27" x="790" y="150" width="160" height="120" rx="5" />
+  <text class="local-text" x="870" y="215">Cúspide</text>
+  
+  <rect class="local" data-tienda-id="30" x="790" y="290" width="160" height="140" rx="5" />
+  <text class="local-text" x="870" y="365">Silver Sea</text>
+
+  <!-- Food Court -->
+  <rect class="food-court" x="250" y="500" width="200" height="120" rx="5" />
+  <text class="local-text" x="350" y="555" style="fill: #F57F17; font-size: 12px;">🍔 Food Court</text>
+  
+  <rect class="local" data-tienda-id="10" x="260" y="515" width="85" height="40" rx="3" />
+  <text class="local-text" x="302" y="540" style="font-size: 9px;">Le Pain</text>
+  
+  <rect class="local" data-tienda-id="11" x="355" y="515" width="85" height="40" rx="3" />
+  <text class="local-text" x="397" y="540" style="font-size: 9px;">McDonald's</text>
+  
+  <rect class="local" data-tienda-id="12" x="260" y="565" width="85" height="40" rx="3" />
+  <text class="local-text" x="302" y="590" style="font-size: 9px;">Luccianos</text>
+  
+  <!-- Fila Inferior -->
+  <rect class="local" data-tienda-id="14" x="480" y="500" width="180" height="120" rx="5" />
+  <text class="local-text" x="570" y="565">Dean &amp; Dennis</text>
+
+  <!-- Escaleras -->
+  <rect class="escaleras" x="50" y="500" width="80" height="60" rx="5" />
+  <text class="local-text" x="90" y="535" style="fill: #F57C00;">↓ BAJA</text>
+  
+  <rect class="escaleras" x="820" y="500" width="80" height="60" rx="5" />
+  <text class="local-text" x="860" y="535" style="fill: #F57C00;">↑ SUBE</text>
+</svg>

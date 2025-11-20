@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" id="mapa-svg-segundo-piso">
+  <defs>
+    <style>
+      .local {
+        fill: #E8F5E9;
+        stroke: #388E3C;
+        stroke-width: 2;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .local:hover {
+        fill: #C8E6C9;
+        stroke: #1B5E20;
+        stroke-width: 3;
+        filter: drop-shadow(0 4px 8px rgba(56, 142, 60, 0.3));
+      }
+      .local.selected {
+        fill: #81C784;
+        stroke: #1B5E20;
+        stroke-width: 3;
+        animation: pulseLocal 1.5s ease-in-out infinite;
+      }
+      @keyframes pulseLocal {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      .pasillo {
+        fill: #FAFAFA;
+        stroke: #BDBDBD;
+        stroke-width: 2;
+      }
+      .local-text {
+        font-family: 'Arial', sans-serif;
+        font-size: 18px;
+        fill: #388E3C;
+        text-anchor: middle;
+        pointer-events: none;
+        font-weight: 700;
+      }
+      .escaleras {
+        fill: #FFE0B2;
+        stroke: #F57C00;
+        stroke-width: 2;
+      }
+      .terraza {
+        fill: #E1F5FE;
+        stroke: #0277BD;
+        stroke-width: 2;
+        stroke-dasharray: 5,5;
+      }
+    </style>
+  </defs>
+
+  <!-- Área central de pasillos -->
+  <rect class="pasillo" x="300" y="200" width="400" height="250" rx="10" />
+  <rect class="pasillo" x="450" y="275" width="100" height="100" rx="50" />
+
+  <!-- SEGUNDO PISO - 10 Locales -->
+  
+  <!-- Fila Superior -->
+  <rect class="local" data-tienda-id="7" x="50" y="30" width="180" height="100" rx="5" />
+  <text class="local-text" x="140" y="85">Hollister</text>
+  
+  <rect class="local" data-tienda-id="9" x="250" y="30" width="180" height="100" rx="5" />
+  <text class="local-text" x="340" y="85">Pandora</text>
+  
+  <rect class="local" data-tienda-id="13" x="450" y="30" width="180" height="100" rx="5" />
+  <text class="local-text" x="540" y="85">Macowens</text>
+  
+  <rect class="local" data-tienda-id="15" x="650" y="30" width="140" height="100" rx="5" />
+  <text class="local-text" x="720" y="85">Puma</text>
+  
+  <rect class="local" data-tienda-id="21" x="810" y="30" width="140" height="100" rx="5" />
+  <text class="local-text" x="880" y="85">Zara Home</text>
+
+  <!-- Columna Izquierda -->
+  <rect class="local" data-tienda-id="22" x="50" y="150" width="160" height="130" rx="5" />
+  <text class="local-text" x="130" y="220">Fossil</text>
+  
+  <rect class="local" data-tienda-id="31" x="50" y="300" width="160" height="130" rx="5" />
+  <text class="local-text" x="130" y="370">Racks&amp;Racks</text>
+
+  <!-- Columna Derecha -->
+  <rect class="local" data-tienda-id="32" x="790" y="150" width="160" height="130" rx="5" />
+  <text class="local-text" x="870" y="220">Lumen</text>
+  
+  <rect class="local" data-tienda-id="33" x="790" y="300" width="160" height="130" rx="5" />
+  <text class="local-text" x="870" y="370">Adidas</text>
+
+  <!-- Fila Inferior -->
+  <rect class="local" data-tienda-id="34" x="250" y="500" width="180" height="120" rx="5" />
+  <text class="local-text" x="340" y="565">H&amp;M</text>
+  
+  <rect class="local" data-tienda-id="35" x="450" y="500" width="180" height="120" rx="5" />
+  <text class="local-text" x="540" y="565">Starbucks</text>
+
+  <!-- Terraza / Área especial -->
+  <rect class="terraza" x="50" y="450" width="160" height="150" rx="5" />
+  <text class="local-text" x="130" y="530" style="fill: #0277BD; font-size: 12px;">☀ Terraza</text>
+
+  <!-- Escaleras -->
+  <rect class="escaleras" x="820" y="500" width="80" height="100" rx="5" />
+  <text class="local-text" x="860" y="555" style="fill: #F57C00;">↓ BAJA</text>
+  <line x1="845" y1="570" x2="875" y2="580" stroke="#F57C00" stroke-width="2" />
+  <line x1="845" y1="555" x2="875" y2="565" stroke="#F57C00" stroke-width="2" />
+  <line x1="845" y1="540" x2="875" y2="550" stroke="#F57C00" stroke-width="2" />
+</svg>
