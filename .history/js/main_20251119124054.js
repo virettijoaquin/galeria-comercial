@@ -1,5 +1,5 @@
 // ==========================================
-// PLAZA Delta - CENTRO COMERCIAL
+// PLAZA MAYOR - CENTRO COMERCIAL
 // Main JavaScript File
 // ==========================================
 
@@ -506,4 +506,4 @@ function initBrandsCarousel() {
     });
 }
 
-console.log('Plaza Delta - Website cargado correctamente ✅');
+console.log('Plaza Mayor - Website cargado correctamente ✅');
