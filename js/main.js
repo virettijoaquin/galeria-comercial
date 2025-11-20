@@ -378,72 +378,173 @@ console.log("Plaza Mayor - Website cargado correctamente ✅");
 
 const busqueda = document.getElementById("busqueda");
 const pisos = document.querySelectorAll("#filtroPiso .nav-link");
-const tiendas = document.querySelectorAll(".tienda");
 
 // Solo ejecutar si existe el elemento busqueda (página de mapa)
-if (busqueda && tiendas.length > 0) {
+if (busqueda) {
+  let tiendasData = [];
+  let currentPiso = "Planta Baja";
+  
   const mapaLogo = document.getElementById("mapaLogo");
-
   const panel = document.querySelector(".panel");
   const panel_nombre = document.getElementById("panel-nombre");
   const panel_info = document.getElementById("panel-info");
   const panel_desc = document.getElementById("panel-desc");
   const panel_logo = document.getElementById("panel-logo");
   const infoLink = document.getElementById("infoLink");
-
   const maps = document.querySelectorAll(".mall-map");
+  const tiendasList = document.getElementById("tiendas-list");
 
-  let currentPiso = "Planta Baja";
+  // Cargar tiendas desde JSON
+  async function loadTiendasMapa() {
+    try {
+      const response = await fetch('../data/tiendas.json');
+      if (!response.ok) {
+        throw new Error('Error al cargar las tiendas');
+      }
+      const data = await response.json();
+      tiendasData = data.tiendas;
+      renderTiendasList();
+      renderTiendasOnMap();
+      filterStores();
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  // Renderizar lista de tiendas
+  function renderTiendasList() {
+    if (!tiendasList) return;
+    
+    tiendasList.innerHTML = '';
+    
+    tiendasData.forEach(tienda => {
+      const tiendaElement = document.createElement('li');
+      tiendaElement.className = 'tienda';
+      tiendaElement.innerHTML = `
+        <strong>${tienda.nombre}</strong>
+        <small>${getCategoryName(tienda.categoria)}</small>
+      `;
+      
+      // Agregar click handler
+      tiendaElement.addEventListener('click', () => {
+        showTiendaOnMap(tienda);
+      });
+      
+      tiendasList.appendChild(tiendaElement);
+    });
+  }
+
+  // Renderizar marcadores en el mapa
+  function renderTiendasOnMap() {
+    maps.forEach(map => {
+      // Limpiar marcadores existentes
+      const existingMarkers = map.querySelectorAll('.tienda-marker');
+      existingMarkers.forEach(marker => marker.remove());
+      
+      const mapPiso = map.dataset.piso;
+      
+      // Agregar marcadores para tiendas del piso actual
+      tiendasData.forEach(tienda => {
+        const pisoNormalizado = normalizePiso(tienda.piso);
+        
+        if (pisoNormalizado === mapPiso) {
+          const marker = document.createElement('div');
+          marker.className = 'tienda-marker';
+          marker.style.left = tienda.mapX + '%';
+          marker.style.top = tienda.mapY + '%';
+          marker.title = tienda.nombre;
+          
+          marker.addEventListener('click', () => {
+            showTiendaOnMap(tienda);
+          });
+          
+          map.appendChild(marker);
+        }
+      });
+    });
+  }
+
+  // Mostrar tienda en el mapa
+  function showTiendaOnMap(tienda) {
+    const pisoNormalizado = normalizePiso(tienda.piso);
+    
+    // Cambiar al piso de la tienda si es necesario
+    if (currentPiso !== pisoNormalizado) {
+      pisos.forEach((p) => {
+        if (p.dataset.piso === pisoNormalizado) {
+          p.click();
+        }
+      });
+    }
+    
+    // Mostrar logo en el mapa
+    const logoSrc = tienda.logoImg || '../assets/img/logo.png';
+    mapaLogo.src = logoSrc;
+    mapaLogo.style.left = tienda.mapX + '%';
+    mapaLogo.style.top = tienda.mapY + '%';
+    mapaLogo.style.display = 'block';
+
+    // Mostrar panel de información
+    panel_logo.src = logoSrc;
+    panel_nombre.textContent = tienda.nombre;
+    panel_info.textContent = getCategoryName(tienda.categoria) + ' - ' + pisoNormalizado;
+    panel_desc.textContent = tienda.descripcion;
+    
+    if (tienda.url) {
+      infoLink.href = tienda.url;
+      infoLink.style.display = 'inline-block';
+    } else {
+      infoLink.style.display = 'none';
+    }
+    
+    panel.style.display = 'block';
+  }
+
+  // Normalizar nombre de piso
+  function normalizePiso(piso) {
+    const pisoMap = {
+      'planta-baja': 'Planta Baja',
+      'primer-piso': 'Primer Piso',
+      'segundo-piso': 'Segundo Piso'
+    };
+    return pisoMap[piso] || piso;
+  }
+
+  // Obtener nombre de categoría
+  function getCategoryName(categoria) {
+    const categorias = {
+      'moda': 'Moda',
+      'tecnologia': 'Tecnología',
+      'deportes': 'Deportes',
+      'hogar': 'Hogar',
+      'belleza': 'Belleza',
+      'accesorios': 'Accesorios',
+      'libreria': 'Librería',
+      'otros': 'Otros'
+    };
+    return categorias[categoria] || categoria;
+  }
 
   /* ---------------- MAIN FILTER LOGIC ---------------- */
   function filterStores() {
     const query = busqueda.value.toLowerCase();
+    const tiendaElements = tiendasList.querySelectorAll('.tienda');
 
-    tiendas.forEach((tienda) => {
-      const nombre = tienda.dataset.nombre.toLowerCase();
-      const tipo = tienda.dataset.tipo.toLowerCase();
-      const piso = tienda.dataset.piso;
+    tiendaElements.forEach((tiendaElement, index) => {
+      const tienda = tiendasData[index];
+      const nombre = tienda.nombre.toLowerCase();
+      const categoria = tienda.categoria.toLowerCase();
+      const pisoNormalizado = normalizePiso(tienda.piso);
 
-      const matchSearch = nombre.includes(query) || tipo.includes(query);
-      const matchPiso = currentPiso === piso;
+      const matchSearch = nombre.includes(query) || categoria.includes(query);
+      const matchPiso = currentPiso === pisoNormalizado;
 
-      tienda.style.display = matchSearch && matchPiso ? "block" : "none";
+      tiendaElement.style.display = matchSearch && matchPiso ? 'block' : 'none';
     });
   }
 
-  filterStores();
-
   /* ---------------- SEARCH ---------------- */
   busqueda.addEventListener("input", filterStores);
-
-  /* ---------------- SELECCION DE TIENDA ---------------- */
-  tiendas.forEach((tienda) => {
-    tienda.addEventListener("click", () => {
-      const nombre = tienda.dataset.nombre;
-      const tipo = tienda.dataset.tipo;
-      const piso = tienda.dataset.piso;
-      const desc = tienda.dataset.desc;
-      const logo = tienda.dataset.logo;
-      const url = tienda.dataset.url;
-
-      const posX = parseInt(tienda.dataset.mapX);
-      const posY = parseInt(tienda.dataset.mapY);
-
-      /* ---- Logo Pin ---- */
-      mapaLogo.src = logo;
-      mapaLogo.style.left = posX + "%";
-      mapaLogo.style.top = posY + "%";
-      mapaLogo.style.display = "block";
-
-      /* ---- Info panel ---- */
-      panel_logo.src = logo;
-      panel_nombre.textContent = nombre;
-      panel_info.textContent = tipo + " - " + piso;
-      panel_desc.textContent = desc;
-      infoLink.href = url;
-      panel.style.display = "block";
-    });
-  });
 
   /* ---------------- Piso FILTER ---------------- */
   pisos.forEach((piso) => {
@@ -471,6 +572,9 @@ if (busqueda && tiendas.length > 0) {
       }
     });
   }
+
+  // Inicializar carga de tiendas
+  loadTiendasMapa();
 }
 
 // ==========================================

@@ -2880,6 +2880,76 @@ details p {
   margin-left: calc(0.8 * var(--gutter-x));
 }
 
+#tiendas-list {
+  list-style: none;
+  padding: var(--spacing-md);
+  margin: 0;
+  width: 100%;
+  max-height: 600px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+#tiendas-list .tienda {
+  cursor: pointer;
+  padding: var(--spacing-md);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+#tiendas-list .tienda:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-color: var(--primary-color);
+}
+
+#tiendas-list .tienda strong {
+  color: var(--primary-color);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+#tiendas-list .tienda small {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+/* Scrollbar personalizado para la lista */
+#tiendas-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#tiendas-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: var(--radius-md);
+}
+
+#tiendas-list::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: var(--radius-md);
+}
+
+#tiendas-list::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
 .col-md-6 {
   flex: 0 0 auto;
   width: 50%;
@@ -2931,6 +3001,18 @@ details p {
   overflow: hidden;
 }
 
+.mall-map {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.mall-map img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .d-none {
   display: none !important;
 }
@@ -2940,6 +3022,59 @@ details p {
   width: 40px;
   height: 40px;
   display: none;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+
+/* Marcadores de tiendas en el mapa */
+.tienda-marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.tienda-marker:hover {
+  background: var(--accent-color);
+  transform: translate(-50%, -50%) scale(1.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+
+.tienda-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
 }
 
 /* PANEL INFO */

@@ -9,7 +9,10 @@
       "logo": "Z",
       "logoImg": "../assets/img/logos/zara-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 30,
+      "mapY": 45
     },
     {
       "id": 2,
@@ -20,7 +23,10 @@
       "logo": "P",
       "logoImg": "../assets/img/logos/personal-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 55,
+      "mapY": 30
     },
     {
       "id": 3,
@@ -31,7 +37,10 @@
       "logo": "N",
       "logoImg": "../assets/img/logos/nike-logo.jpg",
       "badgeColor": "secondary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 20,
+      "mapY": 60
     },
     {
       "id": 4,
@@ -42,7 +51,10 @@
       "logo": "L",
       "logoImg": "../assets/img/logos/levis-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 45,
+      "mapY": 50
     },
     {
       "id": 5,
@@ -53,7 +65,10 @@
       "logo": "S",
       "logoImg": "../assets/img/logos/samsung-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 40,
+      "mapY": 35
     },
     {
       "id": 6,
@@ -64,7 +79,10 @@
       "logo": "M",
       "logoImg": "../assets/img/logos/markova-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 60,
+      "mapY": 40
     },
     {
       "id": 7,
@@ -75,7 +93,10 @@
       "logo": "H",
       "logoImg": "../assets/img/logos/hollister-logo.png",
       "badgeColor": "secondary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 25,
+      "mapY": 35
     },
     {
       "id": 8,
@@ -86,7 +107,10 @@
       "logo": "H",
       "logoImg": "../assets/img/logos/havanna-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 70,
+      "mapY": 55
     },
     {
       "id": 9,
@@ -97,7 +121,10 @@
       "logo": "P",
       "logoImg": "../assets/img/logos/pandora-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 50,
+      "mapY": 30
     },
     {
       "id": 10,
@@ -108,7 +135,10 @@
       "logo": "LP",
       "logoImg": "../assets/img/logos/lepain-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 35,
+      "mapY": 50
     },
     {
       "id": 11,
@@ -119,7 +149,10 @@
       "logo": "M",
       "logoImg": "../assets/img/logos/mcdonals-logo.png",
       "badgeColor": "secondary",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 45,
+      "mapY": 60
     },
     {
       "id": 12,
@@ -130,7 +163,10 @@
       "logo": "L",
       "logoImg": "../assets/img/logos/luccianos-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 60,
+      "mapY": 45
     },
     {
       "id": 13,
@@ -141,7 +177,10 @@
       "logo": "M",
       "logoImg": "../assets/img/logos/macowens-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 40,
+      "mapY": 65
     },
     {
       "id": 14,
@@ -152,7 +191,10 @@
       "logo": "DD",
       "logoImg": "../assets/img/logos/deandennis-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 55,
+      "mapY": 70
     },
     {
       "id": 15,
@@ -163,7 +205,10 @@
       "logo": "P",
       "logoImg": "../assets/img/logos/puma-logo.png",
       "badgeColor": "secondary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 15,
+      "mapY": 50
     },
     {
       "id": 16,
@@ -174,7 +219,10 @@
       "logo": "MC",
       "logoImg": "../assets/img/logos/maria-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 10,
+      "mapY": 40
     },
     {
       "id": 17,
@@ -185,7 +233,10 @@
       "logo": "PS",
       "logoImg": "../assets/img/logos/portsaid-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 30,
+      "mapY": 40
     },
     {
       "id": 18,
@@ -196,7 +247,10 @@
       "logo": "S",
       "logoImg": "../assets/logos/sony-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 65,
+      "mapY": 55
     },
     {
       "id": 19,
@@ -207,7 +261,10 @@
       "logo": "R",
       "logoImg": "../assets/logos/reebok-logo.png",
       "badgeColor": "secondary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 28,
+      "mapY": 55
     },
     {
       "id": 20,
@@ -218,7 +275,10 @@
       "logo": "M",
       "logoImg": "../assets/logos/mac-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 48,
+      "mapY": 25
     },
     {
       "id": 21,
@@ -229,7 +289,10 @@
       "logo": "ZH",
       "logoImg": "../assets/logos/zarahome-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "segundo-piso",
+      "mapX": 50,
+      "mapY": 50
     },
     {
       "id": 22,
@@ -240,7 +303,10 @@
       "logo": "F",
       "logoImg": "../assets/logos/fossil-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 52,
+      "mapY": 20
     },
     {
       "id": 23,
@@ -251,7 +317,10 @@
       "logo": "MD",
       "logoImg": "../assets/logos/massimodutti-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 38,
+      "mapY": 25
     },
     {
       "id": 24,
@@ -262,7 +331,10 @@
       "logo": "G",
       "logoImg": "../assets/logos/garmin-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 58,
+      "mapY": 38
     },
     {
       "id": 25,
@@ -273,7 +345,10 @@
       "logo": "UA",
       "logoImg": "../assets/logos/underarmour-logo.png",
       "badgeColor": "secondary",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 35,
+      "mapY": 58
     },
     {
       "id": 26,
@@ -284,7 +359,10 @@
       "logo": "TBS",
       "logoImg": "../assets/logos/bodyshop-logo.png",
       "badgeColor": "primary",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 42,
+      "mapY": 48
     },
     {
       "id": 27,
@@ -295,7 +373,10 @@
       "logo": "C",
       "logoImg": "../assets/logos/cuspide-logo.png",
       "badgeColor": "secondary",
-      "url": null
+      "url": null,
+      "piso": "primer-piso",
+      "mapX": 50,
+      "mapY": 52
     },
     {
       "id": 28,
@@ -306,29 +387,38 @@
       "logo": "F",
       "logoImg": "../assets/logos/falabella-logo.png",
       "badgeColor": "accent",
-      "url": null
+      "url": null,
+      "piso": "planta-baja",
+      "mapX": 75,
+      "mapY": 40
     },
     {
-      "id": 30,
+      "id": 29,
       "nombre": "Capa x Capa",
-      "categoria": "tecnología",
+      "categoria": "tecnologia",
       "descripcion": "Impresiones 3D y diseño digital",
-      "ubicacion": "Planta Baja - Local 12",
-      "logo": "Z",
+      "ubicacion": "Planta Baja - Local 27",
+      "logo": "CXC",
       "logoImg": "../assets/img/logos/capa-x-capa-logo.png",
       "badgeColor": "primary",
-      "url": "https://leonardogmartinez.github.io/comercio"
+      "url": "https://leonardogmartinez.github.io/comercio",
+      "piso": "planta-baja",
+      "mapX": 62,
+      "mapY": 48
     },
     {
       "id": 30,
       "nombre": "Silver Sea",
       "categoria": "moda",
       "descripcion": "Joyas que cuentan historias",
-      "ubicacion": "Planta Baja - Local 12",
-      "logo": "Z",
+      "ubicacion": "Planta Baja - Local 26",
+      "logo": "SS",
       "logoImg": "../assets/img/logos/silver-sea-logo.png",
       "badgeColor": "primary",
-      "url": "https://mmena16.github.io/dydweb-proyecto/"
+      "url": "https://mmena16.github.io/dydweb-proyecto/",
+      "piso": "planta-baja",
+      "mapX": 58,
+      "mapY": 62
     },
     {
       "id": 31,
