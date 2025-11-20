@@ -8,7 +8,8 @@
       "ubicacion": "Planta Baja - Local 12",
       "logo": "Z",
       "logoImg": "../assets/img/logos/zara-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "ubicacion": "Primer Piso - Local 45",
       "logo": "P",
       "logoImg": "../assets/img/logos/personal-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "ubicacion": "Planta Baja - Local 8",
       "logo": "N",
       "logoImg": "../assets/img/logos/nike-logo.jpg",
-      "badgeColor": "secondary"
+      "badgeColor": "secondary",
+      "url": null
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "ubicacion": "Planta Baja - Local 15",
       "logo": "L",
       "logoImg": "../assets/img/logos/levis-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "ubicacion": "Primer Piso - Local 42",
       "logo": "S",
       "logoImg": "../assets/img/logos/samsung-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "ubicacion": "Planta Baja - Local 20",
       "logo": "M",
       "logoImg": "../assets/img/logos/markova-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "ubicacion": "Planta Baja - Local 10",
       "logo": "H",
       "logoImg": "../assets/img/logos/hollister-logo.png",
-      "badgeColor": "secondary"
+      "badgeColor": "secondary",
+      "url": null
     },
     {
       "id": 8,
@@ -78,7 +85,8 @@
       "ubicacion": "Planta Baja - Local 60",
       "logo": "H",
       "logoImg": "../assets/img/logos/havanna-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 9,
@@ -88,7 +96,8 @@
       "ubicacion": "Planta Baja - Local 25",
       "logo": "P",
       "logoImg": "../assets/img/logos/pandora-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 10,
@@ -98,7 +107,8 @@
       "ubicacion": "Primer Piso - Local 30",
       "logo": "LP",
       "logoImg": "../assets/img/logos/lepain-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 11,
@@ -108,7 +118,8 @@
       "ubicacion": "Primer Piso - Local 35",
       "logo": "M",
       "logoImg": "../assets/img/logos/mcdonals-logo.png",
-      "badgeColor": "secondary"
+      "badgeColor": "secondary",
+      "url": null
     },
     {
       "id": 12,
@@ -118,7 +129,8 @@
       "ubicacion": "Primer Piso - Local 48",
       "logo": "L",
       "logoImg": "../assets/img/logos/luccianos-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 13,
@@ -128,7 +140,8 @@
       "ubicacion": "Planta Baja - Local 18",
       "logo": "M",
       "logoImg": "../assets/img/logos/macowens-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 14,
@@ -138,7 +151,8 @@
       "ubicacion": "Planta Baja - Local 22",
       "logo": "DD",
       "logoImg": "../assets/img/logos/deandennis-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 15,
@@ -148,7 +162,8 @@
       "ubicacion": "Planta Baja - Local 9",
       "logo": "P",
       "logoImg": "../assets/img/logos/puma-logo.png",
-      "badgeColor": "secondary"
+      "badgeColor": "secondary",
+      "url": null
     },
     {
       "id": 16,
@@ -158,7 +173,8 @@
       "ubicacion": "Planta Baja - Local 5",
       "logo": "MC",
       "logoImg": "../assets/img/logos/maria-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 17,
@@ -168,7 +184,8 @@
       "ubicacion": "Primer Piso - Local 28",
       "logo": "PS",
       "logoImg": "../assets/img/logos/portsaid-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 18,
@@ -178,7 +195,8 @@
       "ubicacion": "Primer Piso - Local 50",
       "logo": "S",
       "logoImg": "../assets/logos/sony-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 19,
@@ -188,7 +206,8 @@
       "ubicacion": "Planta Baja - Local 11",
       "logo": "R",
       "logoImg": "../assets/logos/reebok-logo.png",
-      "badgeColor": "secondary"
+      "badgeColor": "secondary",
+      "url": null
     },
     {
       "id": 20,
@@ -198,7 +217,8 @@
       "ubicacion": "Planta Baja - Local 21",
       "logo": "M",
       "logoImg": "../assets/logos/mac-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 21,
@@ -208,7 +228,8 @@
       "ubicacion": "Segundo Piso - Local 62",
       "logo": "ZH",
       "logoImg": "../assets/logos/zarahome-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 22,
@@ -218,7 +239,8 @@
       "ubicacion": "Planta Baja - Local 24",
       "logo": "F",
       "logoImg": "../assets/logos/fossil-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 23,
@@ -228,7 +250,8 @@
       "ubicacion": "Primer Piso - Local 32",
       "logo": "MD",
       "logoImg": "../assets/logos/massimodutti-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 24,
@@ -238,7 +261,8 @@
       "ubicacion": "Primer Piso - Local 47",
       "logo": "G",
       "logoImg": "../assets/logos/garmin-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
     {
       "id": 25,
@@ -248,7 +272,8 @@
       "ubicacion": "Planta Baja - Local 13",
       "logo": "UA",
       "logoImg": "../assets/logos/underarmour-logo.png",
-      "badgeColor": "secondary"
+      "badgeColor": "secondary",
+      "url": null
     },
     {
       "id": 26,
@@ -258,7 +283,8 @@
       "ubicacion": "Primer Piso - Local 38",
       "logo": "TBS",
       "logoImg": "../assets/logos/bodyshop-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
     },
     {
       "id": 27,
@@ -268,7 +294,8 @@
       "ubicacion": "Primer Piso - Local 36",
       "logo": "C",
       "logoImg": "../assets/logos/cuspide-logo.png",
-      "badgeColor": "secondary"
+      "badgeColor": "secondary",
+      "url": null
     },
     {
       "id": 28,
@@ -278,7 +305,8 @@
       "ubicacion": "Todos los pisos - Tienda ancla",
       "logo": "F",
       "logoImg": "../assets/logos/falabella-logo.png",
-      "badgeColor": "accent"
+      "badgeColor": "accent",
+      "url": null
     },
      {
       "id": 29,
@@ -288,7 +316,53 @@
       "ubicacion": "Planta Baja - Local 12",
       "logo": "Z",
       "logoImg": "../assets/img/logos/zara-logo.png",
-      "badgeColor": "primary"
+      "badgeColor": "primary",
+      "url": null
+    }
+  ,
+      {
+      "id": 30,
+      "nombre": "Capa x Capa",
+      "categoria": "tecnología",
+      "descripcion": "Impresiones 3D y diseño digital",
+      "ubicacion": "Planta Baja - Local 12",
+      "logo": "Z",
+      "logoImg": "../assets/img/logos/capa-x-capa-logo.png",
+      "badgeColor": "primary",
+      "url": "https://leonardogmartinez.github.io/comercio"
+    },
+          {
+      "id": 30,
+      "nombre": "Silver Sea",
+      "categoria": "moda",
+      "descripcion": "Joyas que cuentan historias",
+      "ubicacion": "Planta Baja - Local 12",
+      "logo": "Z",
+      "logoImg": "../assets/img/logos/silver-sea-logo.png",
+      "badgeColor": "primary",
+      "url": "https://mmena16.github.io/dydweb-proyecto/"
+    },
+    {
+      "id": 31,
+      "nombre": "Racks&Racks",
+      "categoria": "hogar",
+      "descripcion": "Racks de TV modernos, minimalistas y funcionales",
+      "ubicacion": "Planta Baja - Local 14",
+      "logo": "TNF",
+      "logoImg": "../assets/img/logos/racks-logo.jpeg",
+      "badgeColor": "secondary",
+      "url": "https://sfeas1.github.io/localcomercial/"
+    },
+     {
+      "id": 32,
+      "nombre": "Lumen",
+      "categoria": "accesorios",
+      "descripcion": "Anteojos de sol y óptica",
+      "ubicacion": "Planta Baja - Local 14",
+      "logo": "TNF",
+      "logoImg": "../assets/img/logos/lumen.jpeg",
+      "badgeColor": "secondary",
+      "url": "https://virettijoaquin.github.io/local-comercial-lumen/index.html"
     }
   ]
 }
