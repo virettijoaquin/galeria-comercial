@@ -768,6 +768,11 @@ button {
   background-image: url("../assets/img/logos/samsung-logo.png")
 }
 
+.brand-logo-card.brand-silversea {
+  background-image: url("../assets/img/logos/maria-logo2.png")
+}
+
+
 /* CAROUSEL */
 .carousel-container {
   position: relative;
