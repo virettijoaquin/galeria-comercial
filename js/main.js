@@ -210,69 +210,44 @@ function initActiveNavLinks() {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".navbar-link");
 
+  // Guardar enlaces que ya tienen active desde el HTML (páginas actuales)
+  const preActiveLinks = [];
+  navLinks.forEach(link => {
+    if (link.classList.contains('active')) {
+      preActiveLinks.push(link);
+    }
+  });
+
+  // También guardar enlaces activos en dropdown
+  const dropdownLinks = document.querySelectorAll('.dropdown-menu a.active');
+
   window.addEventListener("scroll", function () {
-    let current = "";
-    const headerHeight = document.querySelector(".header").offsetHeight;
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.navbar-link');
+    // Solo activar scroll links si NO hay enlaces pre-activos (páginas multi-página)
+    // y solo para enlaces con href que empiecen con #
+    if (preActiveLinks.length === 0 && dropdownLinks.length === 0) {
+      let current = "";
+      const headerHeight = document.querySelector(".header").offsetHeight;
 
-    // Guardar enlaces que ya tienen active desde el HTML (páginas actuales)
-    const preActiveLinks = [];
-    navLinks.forEach(link => {
-        if (link.classList.contains('active')) {
-            preActiveLinks.push(link);
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight - 100;
+        const sectionHeight = section.clientHeight;
+
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
         }
-    });
+      });
 
-    // También guardar enlaces activos en dropdown
-    const dropdownLinks = document.querySelectorAll('.dropdown-menu a.active');
-
-    window.addEventListener('scroll', function() {
-        // Solo activar scroll links si NO hay enlaces pre-activos (páginas multi-página)
-        // y solo para enlaces con href que empiecen con #
-        if (preActiveLinks.length === 0 && dropdownLinks.length === 0) {
-            let current = '';
-            const headerHeight = document.querySelector('.header').offsetHeight;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - headerHeight - 100;
-                const sectionHeight = section.clientHeight;
-
-                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                // Solo modificar enlaces de tipo anchor (#)
-                if (href && href.startsWith('#')) {
-                    link.classList.remove('active');
-                    if (href === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                }
-            });
+      navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        // Solo modificar enlaces de tipo anchor (#)
+        if (href && href.startsWith("#")) {
+          link.classList.remove("active");
+          if (href === `#${current}`) {
+            link.classList.add("active");
+          }
         }
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - headerHeight - 100;
-      const sectionHeight = section.clientHeight;
-
-      if (
-        window.pageYOffset >= sectionTop &&
-        window.pageYOffset < sectionTop + sectionHeight
-      ) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
+      });
+    }
 
     // Cambiar estilo del header al hacer scroll
     const header = document.querySelector(".header");
@@ -405,95 +380,98 @@ const busqueda = document.getElementById("busqueda");
 const pisos = document.querySelectorAll("#filtroPiso .nav-link");
 const tiendas = document.querySelectorAll(".tienda");
 
-const mapaLogo = document.getElementById("mapaLogo");
+// Solo ejecutar si existe el elemento busqueda (página de mapa)
+if (busqueda && tiendas.length > 0) {
+  const mapaLogo = document.getElementById("mapaLogo");
 
-const panel = document.querySelector(".panel");
-const panel_nombre = document.getElementById("panel-nombre");
-const panel_info = document.getElementById("panel-info");
-const panel_desc = document.getElementById("panel-desc");
-const panel_logo = document.getElementById("panel-logo");
-const infoLink = document.getElementById("infoLink");
+  const panel = document.querySelector(".panel");
+  const panel_nombre = document.getElementById("panel-nombre");
+  const panel_info = document.getElementById("panel-info");
+  const panel_desc = document.getElementById("panel-desc");
+  const panel_logo = document.getElementById("panel-logo");
+  const infoLink = document.getElementById("infoLink");
 
-const maps = document.querySelectorAll(".mall-map");
+  const maps = document.querySelectorAll(".mall-map");
 
-let currentPiso = "Planta Baja";
+  let currentPiso = "Planta Baja";
 
-filterStores();
+  /* ---------------- MAIN FILTER LOGIC ---------------- */
+  function filterStores() {
+    const query = busqueda.value.toLowerCase();
 
-/* ---------------- SEARCH ---------------- */
-busqueda.addEventListener("input", filterStores);
+    tiendas.forEach((tienda) => {
+      const nombre = tienda.dataset.nombre.toLowerCase();
+      const tipo = tienda.dataset.tipo.toLowerCase();
+      const piso = tienda.dataset.piso;
 
-/* ---------------- Piso FILTER ---------------- */
-pisos.forEach((piso) => {
-  piso.addEventListener("click", () => {
-    pisos.forEach((p) => p.classList.remove("active"));
-    piso.classList.add("active");
+      const matchSearch = nombre.includes(query) || tipo.includes(query);
+      const matchPiso = currentPiso === piso;
 
-    currentPiso = piso.dataset.piso;
-    filterStores();
-    updateMapVisibility(currentPiso);
+      tienda.style.display = matchSearch && matchPiso ? "block" : "none";
+    });
+  }
 
-    // Hide highlight and logo when switching floors
-    mapaLogo.style.display = "none";
-    panel.style.display = "none";
-  });
-});
+  filterStores();
 
-/* -------------- MAP SWITCHER -------------- */
-function updateMapVisibility(piso) {
-  maps.forEach((map) => {
-    if (map.dataset.piso === piso) {
-      map.classList.remove("d-none");
-    } else {
-      map.classList.add("d-none");
-    }
-  });
-}
+  /* ---------------- SEARCH ---------------- */
+  busqueda.addEventListener("input", filterStores);
 
-/* ---------------- MAIN FILTER LOGIC ---------------- */
-function filterStores() {
-  const query = busqueda.value.toLowerCase();
-
+  /* ---------------- SELECCION DE TIENDA ---------------- */
   tiendas.forEach((tienda) => {
-    const nombre = tienda.dataset.nombre.toLowerCase();
-    const tipo = tienda.dataset.tipo.toLowerCase();
-    const piso = tienda.dataset.piso;
+    tienda.addEventListener("click", () => {
+      const nombre = tienda.dataset.nombre;
+      const tipo = tienda.dataset.tipo;
+      const piso = tienda.dataset.piso;
+      const desc = tienda.dataset.desc;
+      const logo = tienda.dataset.logo;
+      const url = tienda.dataset.url;
 
-    const matchSearch = nombre.includes(query) || tipo.includes(query);
-    const matchPiso = currentPiso === piso;
+      const posX = parseInt(tienda.dataset.mapX);
+      const posY = parseInt(tienda.dataset.mapY);
 
-    tienda.style.display = matchSearch && matchPiso ? "block" : "none";
+      /* ---- Logo Pin ---- */
+      mapaLogo.src = logo;
+      mapaLogo.style.left = posX + "%";
+      mapaLogo.style.top = posY + "%";
+      mapaLogo.style.display = "block";
+
+      /* ---- Info panel ---- */
+      panel_logo.src = logo;
+      panel_nombre.textContent = nombre;
+      panel_info.textContent = tipo + " - " + piso;
+      panel_desc.textContent = desc;
+      infoLink.href = url;
+      panel.style.display = "block";
+    });
   });
+
+  /* ---------------- Piso FILTER ---------------- */
+  pisos.forEach((piso) => {
+    piso.addEventListener("click", () => {
+      pisos.forEach((p) => p.classList.remove("active"));
+      piso.classList.add("active");
+
+      currentPiso = piso.dataset.piso;
+      filterStores();
+      updateMapVisibility(currentPiso);
+
+      // Hide highlight and logo when switching floors
+      mapaLogo.style.display = "none";
+      panel.style.display = "none";
+    });
+  });
+
+  /* -------------- MAP SWITCHER -------------- */
+  function updateMapVisibility(piso) {
+    maps.forEach((map) => {
+      if (map.dataset.piso === piso) {
+        map.classList.remove("d-none");
+      } else {
+        map.classList.add("d-none");
+      }
+    });
+  }
 }
-
-/* ---------------- SELECCION DE TIENDA ---------------- */
-tiendas.forEach((tienda) => {
-  tienda.addEventListener("click", () => {
-    const nombre = tienda.dataset.nombre;
-    const tipo = tienda.dataset.tipo;
-    const piso = tienda.dataset.piso;
-    const desc = tienda.dataset.desc;
-    const logo = tienda.dataset.logo;
-    const url = tienda.dataset.url;
-
-    const posX = parseInt(tienda.dataset.mapX);
-    const posY = parseInt(tienda.dataset.mapY);
-
-    /* ---- Logo Pin ---- */
-    mapaLogo.src = logo;
-    mapaLogo.style.left = posX + "%";
-    mapaLogo.style.top = posY + "%";
-    mapaLogo.style.display = "block";
-
-    /* ---- Info panel ---- */
-    panel_logo.src = logo;
-    panel_nombre.textContent = nombre;
-    panel_info.textContent = tipo + " - " + piso;
-    panel_desc.textContent = desc;
-    infoLink.href = url;
-    panel.style.display = "block";
-  });
-});
 
 // ==========================================
 // TERMINA MAPA INTERACTIVO

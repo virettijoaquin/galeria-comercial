@@ -3047,3 +3047,261 @@ details p {
 /* ==========================================
    TERMINA ESTILOS MAPA INTERACTIVO
    ========================================== */
+
+/* ==========================================
+   PÁGINA DE LOCALES COMERCIALES
+   ========================================== */
+
+/* Header de la página */
+.stores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.stores-search {
+  flex: 1;
+  min-width: 250px;
+}
+
+.stores-search-input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+}
+
+.stores-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.1);
+}
+
+.stores-map-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  white-space: nowrap;
+}
+
+/* Filtros de categoría */
+.stores-filters {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-xl);
+}
+
+.filter-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 2px solid var(--border-color);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Contador de tiendas */
+.stores-count {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--text-muted);
+  padding: var(--spacing-md);
+  background: rgba(26, 26, 46, 0.05);
+  border-radius: var(--radius-md);
+}
+
+.stores-count span {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: var(--font-size-xl);
+}
+
+/* Grid de tiendas */
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+/* Tarjeta de tienda */
+.store-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.store-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.store-card-header {
+  padding: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.store-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.store-card-body {
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+.store-name {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.store-description {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.store-location {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.store-card-footer {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  background: #f8f9fa;
+}
+
+.store-card-footer .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Mensaje vacío */
+.stores-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4xl) var(--spacing-xl);
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 80px;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
+
+.stores-empty h3 {
+  font-size: var(--font-size-2xl);
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.stores-empty p {
+  color: var(--text-muted);
+  font-size: var(--font-size-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stores-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .stores-search {
+    min-width: 100%;
+  }
+  
+  .stores-map-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .stores-filters {
+    justify-content: center;
+  }
+  
+  .stores-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .stores-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-btn {
+    flex: 1 1 calc(50% - var(--spacing-sm));
+    min-width: 120px;
+  }
+  
+  .store-card-header {
+    padding: var(--spacing-md);
+  }
+  
+  .store-logo {
+    width: 50px;
+    height: 50px;
+    font-size: var(--font-size-lg);
+  }
+  
+  .store-card-body {
+    padding: var(--spacing-md);
+  }
+  
+  .stores-count {
+    font-size: var(--font-size-base);
+  }
+  
+  .empty-icon {
+    font-size: 60px;
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "tiendas": [
+    {
+      "id": 1,
+      "nombre": "Zara",
+      "categoria": "moda",
+      "descripcion": "Moda y accesorios para toda la familia",
+      "ubicacion": "Planta Baja - Local 12",
+      "logo": "Z",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 2,
+      "nombre": "Apple Store",
+      "categoria": "tecnologia",
+      "descripcion": "Productos y accesorios Apple",
+      "ubicacion": "Primer Piso - Local 45",
+      "logo": "A",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 3,
+      "nombre": "Nike",
+      "categoria": "deportes",
+      "descripcion": "Ropa y calzado deportivo",
+      "ubicacion": "Planta Baja - Local 8",
+      "logo": "N",
+      "badgeColor": "secondary"
+    },
+    {
+      "id": 4,
+      "nombre": "H&M",
+      "categoria": "moda",
+      "descripcion": "Moda urbana y casual",
+      "ubicacion": "Planta Baja - Local 15",
+      "logo": "H&M",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 5,
+      "nombre": "Samsung",
+      "categoria": "tecnologia",
+      "descripcion": "Electrónica y smartphones",
+      "ubicacion": "Primer Piso - Local 42",
+      "logo": "S",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 6,
+      "nombre": "Sephora",
+      "categoria": "belleza",
+      "descripcion": "Cosméticos y perfumería",
+      "ubicacion": "Planta Baja - Local 20",
+      "logo": "S",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 7,
+      "nombre": "Adidas",
+      "categoria": "deportes",
+      "descripcion": "Ropa y calzado deportivo",
+      "ubicacion": "Planta Baja - Local 10",
+      "logo": "A",
+      "badgeColor": "secondary"
+    },
+    {
+      "id": 8,
+      "nombre": "IKEA",
+      "categoria": "hogar",
+      "descripcion": "Muebles y decoración",
+      "ubicacion": "Segundo Piso - Local 60",
+      "logo": "I",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 9,
+      "nombre": "Pandora",
+      "categoria": "accesorios",
+      "descripcion": "Joyería y accesorios",
+      "ubicacion": "Planta Baja - Local 25",
+      "logo": "P",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 10,
+      "nombre": "Pull & Bear",
+      "categoria": "moda",
+      "descripcion": "Moda joven y urbana",
+      "ubicacion": "Primer Piso - Local 30",
+      "logo": "P",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 11,
+      "nombre": "Yenny",
+      "categoria": "libreria",
+      "descripcion": "Librería y papelería",
+      "ubicacion": "Primer Piso - Local 35",
+      "logo": "Y",
+      "badgeColor": "secondary"
+    },
+    {
+      "id": 12,
+      "nombre": "Musimundo",
+      "categoria": "tecnologia",
+      "descripcion": "Electrónica y tecnología",
+      "ubicacion": "Primer Piso - Local 48",
+      "logo": "M",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 13,
+      "nombre": "Bershka",
+      "categoria": "moda",
+      "descripcion": "Moda juvenil y tendencias",
+      "ubicacion": "Planta Baja - Local 18",
+      "logo": "B",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 14,
+      "nombre": "Swatch",
+      "categoria": "accesorios",
+      "descripcion": "Relojes y accesorios",
+      "ubicacion": "Planta Baja - Local 22",
+      "logo": "S",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 15,
+      "nombre": "Puma",
+      "categoria": "deportes",
+      "descripcion": "Ropa y calzado deportivo",
+      "ubicacion": "Planta Baja - Local 9",
+      "logo": "P",
+      "badgeColor": "secondary"
+    },
+    {
+      "id": 16,
+      "nombre": "Farmacity",
+      "categoria": "otros",
+      "descripcion": "Farmacia y salud",
+      "ubicacion": "Planta Baja - Local 5",
+      "logo": "F",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 17,
+      "nombre": "Stradivarius",
+      "categoria": "moda",
+      "descripcion": "Moda femenina y accesorios",
+      "ubicacion": "Primer Piso - Local 28",
+      "logo": "S",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 18,
+      "nombre": "Sony",
+      "categoria": "tecnologia",
+      "descripcion": "Audio y electrónica premium",
+      "ubicacion": "Primer Piso - Local 50",
+      "logo": "S",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 19,
+      "nombre": "Reebok",
+      "categoria": "deportes",
+      "descripcion": "Calzado y ropa deportiva",
+      "ubicacion": "Planta Baja - Local 11",
+      "logo": "R",
+      "badgeColor": "secondary"
+    },
+    {
+      "id": 20,
+      "nombre": "MAC Cosmetics",
+      "categoria": "belleza",
+      "descripcion": "Maquillaje profesional",
+      "ubicacion": "Planta Baja - Local 21",
+      "logo": "M",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 21,
+      "nombre": "Zara Home",
+      "categoria": "hogar",
+      "descripcion": "Decoración y textiles para el hogar",
+      "ubicacion": "Segundo Piso - Local 62",
+      "logo": "ZH",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 22,
+      "nombre": "Fossil",
+      "categoria": "accesorios",
+      "descripcion": "Relojes y accesorios de cuero",
+      "ubicacion": "Planta Baja - Local 24",
+      "logo": "F",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 23,
+      "nombre": "Massimo Dutti",
+      "categoria": "moda",
+      "descripcion": "Moda elegante y sofisticada",
+      "ubicacion": "Primer Piso - Local 32",
+      "logo": "MD",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 24,
+      "nombre": "Garmin",
+      "categoria": "tecnologia",
+      "descripcion": "Smartwatches y dispositivos GPS",
+      "ubicacion": "Primer Piso - Local 47",
+      "logo": "G",
+      "badgeColor": "accent"
+    },
+    {
+      "id": 25,
+      "nombre": "Under Armour",
+      "categoria": "deportes",
+      "descripcion": "Ropa deportiva de alto rendimiento",
+      "ubicacion": "Planta Baja - Local 13",
+      "logo": "UA",
+      "badgeColor": "secondary"
+    },
+    {
+      "id": 26,
+      "nombre": "The Body Shop",
+      "categoria": "belleza",
+      "descripcion": "Cosméticos naturales y cuidado personal",
+      "ubicacion": "Primer Piso - Local 38",
+      "logo": "TBS",
+      "badgeColor": "primary"
+    },
+    {
+      "id": 27,
+      "nombre": "Cúspide",
+      "categoria": "libreria",
+      "descripcion": "Librería y música",
+      "ubicacion": "Primer Piso - Local 36",
+      "logo": "C",
+      "badgeColor": "secondary"
+    },
+    {
+      "id": 28,
+      "nombre": "Falabella",
+      "categoria": "otros",
+      "descripcion": "Tienda por departamentos",
+      "ubicacion": "Todos los pisos - Tienda ancla",
+      "logo": "F",
+      "badgeColor": "accent"
+    }
+  ]
+}

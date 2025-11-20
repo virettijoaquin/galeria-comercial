@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Directorio completo de tiendas y locales comerciales en Plaza Mayor">
+    <title>Locales Comerciales | Plaza Mayor</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="navbar-brand">Plaza Mayor</a>
+
+                <div class="navbar-toggle" id="navbarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="../index.html" class="navbar-link">Home</a></li>
+
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link active">Tiendas <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="locales-comerciales.html" class="active">Locales Comerciales</a></li>
+                            <li><a href="gastronomia/gastronomia.html">Gastronomía</a></li>
+                            <li><a href="entretenimiento.html">Entretenimiento</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Experiencias <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="promociones.html">Promociones</a></li>
+                            <li><a href="ofertas.html">Ofertas</a></li>
+                            <li><a href="servicios/servicios.html">Servicios</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="navbar-dropdown">
+                        <a href="#" class="navbar-link">Ayuda <span class="dropdown-icon">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="chatbot.html">Chatbot</a></li>
+                            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+                            <li><a href="mapa-del-sitio.html">Mapa del Sitio</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="trabaja-con-nosotros/trabaja-con-nosotros.html" class="btn btn-primary btn-sm">Trabajá con Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-simple">
+        <div class="container">
+            <h1 class="hero-title">Locales Comerciales</h1>
+            <p class="hero-subtitle">Descubre todas las tiendas y marcas disponibles en Plaza Mayor</p>
+        </div>
+    </section>
+
+    <!-- FILTROS Y BÚSQUEDA -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="stores-header">
+                <div class="stores-search">
+                    <input type="text" id="storeSearch" class="stores-search-input" placeholder="Buscar tienda por nombre...">
+                </div>
+                <a href="mapa.html" class="btn btn-primary btn-lg stores-map-btn">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Ver Mapa Interactivo
+                </a>
+            </div>
+
+            <!-- Filtros de categoría -->
+            <div class="stores-filters">
+                <button class="filter-btn active" data-category="todas">Todas</button>
+                <button class="filter-btn" data-category="moda">Moda</button>
+                <button class="filter-btn" data-category="tecnologia">Tecnología</button>
+                <button class="filter-btn" data-category="deportes">Deportes</button>
+                <button class="filter-btn" data-category="hogar">Hogar y Deco</button>
+                <button class="filter-btn" data-category="belleza">Belleza</button>
+                <button class="filter-btn" data-category="accesorios">Accesorios</button>
+                <button class="filter-btn" data-category="libreria">Librería</button>
+                <button class="filter-btn" data-category="otros">Otros</button>
+            </div>
+
+            <div class="stores-count">
+                <span id="storesCount">48</span> tiendas encontradas
+            </div>
+        </div>
+    </section>
+
+    <!-- GRID DE TIENDAS -->
+    <section class="section">
+        <div class="container">
+            <div class="stores-grid" id="storesGrid">
+                <!-- Las tiendas se cargarán dinámicamente desde el JSON -->
+            </div>
+
+            <!-- Mensaje cuando no hay resultados -->
+            <div class="stores-empty" id="emptyMessage" style="display: none;">
+                <div class="empty-icon">🔍</div>
+                <h3>No se encontraron tiendas</h3>
+                <p>Intenta con otra búsqueda o categoría</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section section-dark">
+        <div class="container text-center">
+            <h2 class="section-title">¿Necesitás ayuda para encontrar una tienda?</h2>
+            <p class="section-subtitle">Nuestro equipo está disponible para asistirte</p>
+            <div class="hero-buttons">
+                <a href="mapa.html" class="btn btn-primary btn-lg">Ver Mapa Interactivo</a>
+                <a href="contacto.html" class="btn btn-outline btn-lg">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Plaza Mayor</h3>
+                    <p>El centro comercial más completo de la ciudad, con las mejores marcas y experiencias para toda la
+                        familia.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <p><a href="../index.html#tiendas">Directorio de Tiendas</a></p>
+                    <p><a href="promociones.html">Promociones</a></p>
+                    <p><a href="../index.html#servicios">Servicios</a></p>
+                    <p><a href="../index.html#horarios">Horarios</a></p>
+                    <p><a href="contacto.html">Contacto</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Información</h3>
+                    <p><a href="#">Política de Privacidad</a></p>
+                    <p><a href="#">Términos y Condiciones</a></p>
+                    <p><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></p>
+                    <p><a href="trabaja-con-nosotros/trabaja-con-nosotros.html">Trabaja con Nosotros</a></p>
+                    <p><a href="#">Eventos</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir ofertas exclusivas y novedades.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Tu email" class="newsletter-input">
+                        <button class="btn btn-primary newsletter-button">Suscribirse</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Plaza Mayor Centro Comercial. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/locales-comerciales.js"></script>
+</body>
+</html>
