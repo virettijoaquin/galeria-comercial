@@ -90,6 +90,10 @@
   <rect class="local" data-tienda-id="28" x="50" y="450" width="180" height="120" rx="5" />
   <text class="local-text" x="140" y="515">Falabella</text>
   
+  <rect class="local" data-tienda-id="33" x="250" y="500" width="140" height="120" rx="5" />
+  <text class="local-text" x="320" y="555">Nuestro</text>
+  <text class="local-text" x="320" y="575">Taller</text>
+  
   <rect class="local" data-tienda-id="29" x="410" y="500" width="180" height="120" rx="5" />
   <text class="local-text" x="500" y="565">Capa x Capa</text>
 

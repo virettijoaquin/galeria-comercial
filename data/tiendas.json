@@ -58,17 +58,17 @@
     },
     {
       "id": 33,
-      "nombre": "Adidas",
-      "categoria": "deportes",
-      "descripcion": "Ropa y calzado deportivo original",
-      "ubicacion": "Segundo Piso - Local 90",
-      "logo": "AD",
-      "logoImg": null,
+      "nombre": "Nuestro Taller",
+      "categoria": "hogar",
+      "descripcion": "",
+      "ubicacion": "Planta Baja - Local 16",
+      "logo": "TNF",
+      "logoImg": "../assets/img/logos/marcos-logo.png",
       "badgeColor": "secondary",
-      "url": null,
-      "piso": "segundo-piso",
-      "mapX": 80,
-      "mapY": 35
+      "url": "https://mlantieri.github.io/local-comercial/",
+      "piso": "planta-baja",
+      "mapX": 88,
+      "mapY": 92
     },
     {
       "id": 1,
