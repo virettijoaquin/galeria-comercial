@@ -744,8 +744,75 @@ if (busqueda) {
     });
   }
 
+  // Inicializar eventos SVG
+  function initSvgMapEvents() {
+    const svgObjects = document.querySelectorAll('.mall-map object');
+    
+    svgObjects.forEach(obj => {
+      // Función para agregar eventos a los locales
+      const addLocalEvents = (svgDoc) => {
+        if (!svgDoc) return;
+        
+        const locales = svgDoc.querySelectorAll('.local[data-tienda-id]');
+        console.log('Locales encontrados:', locales.length);
+        
+        locales.forEach(local => {
+          const tiendaId = parseInt(local.dataset.tiendaId);
+          
+          local.style.cursor = 'pointer';
+          local.addEventListener('click', function(e) {
+            console.log('Click en local:', tiendaId);
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Remover selección de todos los locales
+            document.querySelectorAll('.mall-map object').forEach(o => {
+              const doc = o.contentDocument;
+              if (doc) {
+                doc.querySelectorAll('.local').forEach(l => {
+                  l.classList.remove('selected');
+                });
+              }
+            });
+            
+            // Seleccionar este
+            this.classList.add('selected');
+            
+            // Mostrar tienda
+            const tienda = tiendasData.find(t => t.id === tiendaId);
+            if (tienda) {
+              console.log('Mostrando tienda:', tienda.nombre);
+              showTiendaOnMap(tienda);
+            } else {
+              console.log('No se encontró tienda con id:', tiendaId);
+            }
+          });
+        });
+      };
+      
+      // Verificar si ya está cargado
+      if (obj.contentDocument) {
+        addLocalEvents(obj.contentDocument);
+      } else {
+        // Si no está cargado, esperar al evento load
+        obj.addEventListener('load', function() {
+          addLocalEvents(this.contentDocument);
+        });
+      }
+    });
+  }
+
   // Inicializar carga de tiendas
   loadTiendasMapa();
+  
+  // Inicializar eventos SVG cuando la página esté completamente cargada
+  if (document.readyState === 'loading') {
+    window.addEventListener('load', () => {
+      setTimeout(initSvgMapEvents, 1000);
+    });
+  } else {
+    setTimeout(initSvgMapEvents, 1000);
+  }
 }
 
 // ==========================================
