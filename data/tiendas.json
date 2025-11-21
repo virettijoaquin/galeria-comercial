@@ -58,9 +58,9 @@
     },
     {
       "id": 33,
-      "nombre": "Nuestro Taller",
+      "nombre": "Imagenes Unicas Enmarcadas",
       "categoria": "hogar",
-      "descripcion": "",
+      "descripcion": "Cuadros y enmarcados personalizados",
       "ubicacion": "Planta Baja - Local 16",
       "logo": "TNF",
       "logoImg": "../assets/img/logos/marcos-logo.png",
