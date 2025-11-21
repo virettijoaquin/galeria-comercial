@@ -313,10 +313,6 @@ galeria-comercial/
 
 Este proyecto es un trabajo académico desarrollado para la materia Diseño y Desarrollo Web de UADE.
 
-## 🙏 Agradecimientos
-
-Agradecemos a la profesora **Patricia Litovicius** por su guía y enseñanzas durante el desarrollo de este proyecto.
-
 ---
 
 **Universidad Argentina de la Empresa (UADE)**  
